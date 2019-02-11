@@ -21,5 +21,5 @@ Plugins:
 Documents:
   - "简介":
       - "快速入门":
-        Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/Get-Started/quick-start-guide.md"
+        Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/简介/快速入门.md"
         Slug: quick-start-guide
