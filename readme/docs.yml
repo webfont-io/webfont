@@ -1,4 +1,4 @@
-Site: "webfont"
+Site: "webfont documents"
 Output: "docs"
 CDN: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets"
 Logo: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets/img/webfont.png"
@@ -16,7 +16,7 @@ Plugins:
   #- Google Analytics: "UA-XXXXX-Y"
   #- Mixpanel: "MIXPANEL_TOKEN"
   - Footer Widget:
-      Label: "Contact Service"
+      Label: "Contact customer service"
       Link: "https://webfont.io/"
 Documents:
   - "Get-Started":
