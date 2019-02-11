@@ -4,7 +4,7 @@ CDN: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets"
 Logo: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets/img/webfont.png"
 HtmlBase: ""
 PageOnly: true
-footerHTML: webfont.io <a>asd</a>
+footerHTML: webfont.io tech
 
 #Language:
 #  - Chinese: /
@@ -17,7 +17,7 @@ Plugins:
   #- Mixpanel: "MIXPANEL_TOKEN"
   - Footer Widget:
       Label: "联系客服"
-      Link: "/"
+      Link: ""
 Documents:
   - "简介":
       - "快速入门":
