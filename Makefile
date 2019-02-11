@@ -17,4 +17,4 @@ mod:
 	go build ./...
 doc:
 	/usr/local/lib/ruby/gems/2.6.0/gems/gluegun-0.1.2/gluegun generate docs.yml
-	#docker run --rm -it -v ${PWD}:/code/ -v ${PWD}/docs/:/tmp/docs/ -v ${PWD}/docs/:/tmp/docs/ hkloudou/glugun ./gluegun generate /code/docs.yml
+	@#docker run --rm -it -v ${PWD}:/code/ -v ${PWD}/docs/:/tmp/docs/ -v ${PWD}/docs/:/tmp/docs/ hkloudou/glugun ./gluegun generate /code/docs.yml
