@@ -1,0 +1,25 @@
+Site: "webfont"
+Output: "docs/"
+CDN: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets"
+Logo: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets/img/webfont.png"
+HtmlBase: ""
+PageOnly: true
+footerHTML: webfont.io <a>asd</a>
+
+#Language:
+#  - Chinese: /
+#  - English: /
+Plugins:
+  #- Algolia:
+  #    apiKey: "ALGOLIA_TOKEN"
+  #    index: "INDEX_NAME"
+  #- Google Analytics: "UA-XXXXX-Y"
+  #- Mixpanel: "MIXPANEL_TOKEN"
+  - Footer Widget:
+      Label: "联系客服"
+      Link: "/"
+Documents:
+  - Get Started:
+      - Quick Start Guide:
+        Link: https://github.com/webfont-io/webfont/blob/master/readme/en/Get Started/quick-start-guide.md
+        Slug: quick-start-guide

@@ -15,3 +15,5 @@ tag:
 	@echo "current version:`git describe`"
 mod:
 	go build ./...
+doc:
+	docker run --rm -it -v ${PWD}:/code/ -v ${PWD}/docs/:/tmp/docs/ -v ${PWD}/docs/:/tmp/docs/ hkloudou/glugun ./gluegun generate /code/docs.yml
