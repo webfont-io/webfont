@@ -16,7 +16,7 @@ tag:
 mod:
 	go build ./...
 doc:
-	/usr/local/lib/ruby/gems/2.6.0/gems/gluegun-0.1.2/gluegun generate docs.yml
-	@#docker run --rm -it -v ${PWD}:/code/ -v ${PWD}/docs/:/tmp/docs/ -v ${PWD}/docs/:/tmp/docs/ hkloudou/glugun ./gluegun generate /code/docs.yml
-	#html 
+	rm -rf docs
+	/usr/local/lib/ruby/gems/2.6.0/gems/gluegun-0.1.2/gluegun generate readme/docs.yml
+	/usr/local/lib/ruby/gems/2.6.0/gems/gluegun-0.1.2/gluegun generate readme/docs_cn.yml
 	@docker run --rm -it -v ${PWD}/docs/:/var/www/ -p 80:80 svenbrnn/alpine-lighttpd2:latest

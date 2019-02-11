@@ -1,14 +1,14 @@
 Site: "webfont"
-Output: "docs/"
+Output: "docs/cn"
 CDN: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets"
 Logo: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets/img/webfont.png"
-HtmlBase: ""
+HtmlBase: "/cn" #example /cn
 PageOnly: true
 footerHTML: webfont.io tech
 
-#Language:
-#  - Chinese: /
-#  - English: /
+Language:
+  - 简体中文: /cn
+  - English: /
 Plugins:
   #- Algolia:
   #    apiKey: "ALGOLIA_TOKEN"
@@ -17,7 +17,7 @@ Plugins:
   #- Mixpanel: "MIXPANEL_TOKEN"
   - Footer Widget:
       Label: "联系客服"
-      Link: ""
+      Link: "https://webfont.io/"
 Documents:
   - "简介":
       - "快速入门":
