@@ -38,6 +38,34 @@
                                                     </li>
                                     </ul>
                                 </li>
+                            <%- active_keywords = ['', ''] -%>
+                            <%- if !defined?(key2) && first_link -%>
+                                <%- active_keywords = ['toggled', 'display: block'] -%>
+                            <%- end -%>
+                            <%- if defined?(key2) && key2['Options'] != 'hidden' -%>
+                                <%- if defined?(categories) && categories.keys[0] ==='独立部署'-%>
+                                    <%- active_keywords = ['toggled', 'display: block'] -%>
+                                <%- end -%>
+                            <%- end -%>
+                                <li class='doc-link__category <%= active_keywords[0] -%>'>
+                                    <a href="" class="doc-link__header">
+                                        独立部署                                    </a>
+                                    <ul class="doc-link__items" style='<%= active_keywords[1] -%>'>
+                                                    <li>
+                                                        <%- if defined?(key2) && key2['Slug'] === 'self-host-guide'-%>
+                                                            <a href="/self-host-guide.html" class="doc-link__active">
+                                                                centos                                                            </a>
+                                                        <%- elsif !defined?(key2) && first_link -%>
+                                                            <a href="/self-host-guide.html" class="doc-link__active">
+                                                                centos                                                            </a>
+                                                            <%- first_link = false -%>
+                                                        <%- else -%>
+                                                            <a href="/self-host-guide.html">
+                                                                centos                                                            </a>
+                                                        <%- end -%>
+                                                    </li>
+                                    </ul>
+                                </li>
                  
             </ul>
         </div>
