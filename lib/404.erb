@@ -7,9 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>webfont</title>
+    <title><%= @site_map['Site'] %></title>
 
-    <link href="https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets/css/gluegun.min.css" rel="stylesheet">
+    <link href="<%=@site_map['CDN']%>/css/gluegun.min.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
@@ -20,8 +20,8 @@
         <p>I have no idea where that document is, sorry. Are you sure you typed in the correct URL?</p>
       </div>
       <div class="page-error__links">
-        <a href="javascript:history.back()"><img src="https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets/img/icons/arrow-left.svg" alt=""> Previous page</a>
-        <a href="/"><img src="https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets/img/icons/arrow-up.svg" alt=""> Go to home</a>
+        <a href="javascript:history.back()"><img src="<%=@site_map['CDN']%>/img/icons/arrow-left.svg" alt=""> Previous page</a>
+        <a href="/"><img src="<%=@site_map['CDN']%>/img/icons/arrow-up.svg" alt=""> Go to home</a>
       </div>
     </div>
   </body>

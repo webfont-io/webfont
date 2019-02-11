@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%= @site_map['Site'] %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+    <link href="<%=@site_map['CDN']%>/css/gluegun.min.css" rel="stylesheet">
+    <link href="<%=@site_map['CDN']%>/vendors/highlight.js/default.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <%- if !@site_map['Plugins'].nil? -%>
+      <%- @site_map['Plugins'].each do |categories| -%>
+        <%- if categories.key?("Algolia") && !categories["Algolia"].nil? -%>
+          <%- if categories["Algolia"].key?("apiKey") && categories["Algolia"].key?("index") -%>
+            <style type="text/css">
+              .algolia-autocomplete {
+                width: 100%;
+                left: 0; }
+              .algolia-autocomplete .ds-dropdown-menu {
+                min-width: 500px;
+                max-width: 800px; }
+              @media (max-width: 991px) {
+                .algolia-autocomplete .ds-dropdown-menu {
+                  min-width: 200px; } }
+              .algolia-autocomplete .ds-dropdown-menu:before {
+                display: none !important; }
+            </style>
+          <%- end -%>
+        <%- end -%>
+      <%- end -%>
+    <%- end -%>
+  </head>
+
+  <body>

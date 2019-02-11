@@ -19,7 +19,7 @@ Plugins:
       Label: "联系客服"
       Link: "/"
 Documents:
-  - 简介:
-      - 快速入门:
+  - "简介":
+      - "快速入门":
         Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/Get-Started/quick-start-guide.md"
         Slug: quick-start-guide
