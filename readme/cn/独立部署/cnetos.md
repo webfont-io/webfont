@@ -4,3 +4,4 @@
   $ yum update
   $ yum install webfont
 ```
+独立部署
