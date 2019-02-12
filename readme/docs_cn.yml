@@ -1,7 +1,7 @@
 Site: "webfont 文档中心"
 Output: "docs/cn"
-CDN: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets"
-Logo: "https://zito-info.oss-cn-hangzhou.aliyuncs.com/cdnassets/img/webfont.png"
+CDN: "/assets"
+Logo: "/assets/img/webfont.png"
 HtmlBase: "/cn" #example /cn
 PageOnly: true
 footerHTML: webfont.io tech

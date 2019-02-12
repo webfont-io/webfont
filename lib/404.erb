@@ -12,6 +12,7 @@
     <link href="<%=@site_map['CDN']%>/css/gluegun.min.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
   </head>
   <body>
     <div class="page-error">
@@ -24,5 +25,9 @@
         <a href="/"><img src="<%=@site_map['CDN']%>/img/icons/arrow-up.svg" alt=""> Go to home</a>
       </div>
     </div>
+    <script type="text/javascript">
+      $youziku.load("body", "feef100d7f54412f89890756de459e7c", "cyjianxk");
+      $youziku.draw();
+    </script>
   </body>
 </html>
