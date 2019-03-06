@@ -11,7 +11,8 @@ git:
 tag:
 	@ make mod
 	- git add . && git commit -S -m 'auto tag'
-	- git autotag && git push origin master -f --tags
+	- git tag -a -m latest -s
+	#- git autotag && git push origin master -f --tags
 	@echo "current version:`git describe`"
 mod:
 	go build ./...
