@@ -11,8 +11,7 @@ git:
 tag:
 	@ make mod
 	- git add . && git commit -S -m 'auto tag'
-	- git tag -d latest
-	- git tag -a -m -s latest
+	- git tag -a -f -m -s latest
 	- git autotag
 	- git push origin master -f --tags
 	#- git autotag && git push origin master -f --tags
