@@ -27,7 +27,9 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	req := &webfontsdk.FontBuildRequest{
-		FontId:   12,
+		FontId:   45803,
+		Apikey:   "5873b2bc-84e7-490b-b637-58aaf7d59240",
+		Text:     "苏打粉地方",
 		NeedTtf:  true,
 		NeedEot:  true,
 		NeedWoff: true,
