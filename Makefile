@@ -7,13 +7,7 @@ init:
 	@git config --local commit.gpgsign true
 	@git config --local autotag.sign true
 git:
-	git autotag -commit '重构SDK' -tag=true -push=true
-tag:
-	@ make mod
-	- git add . && git commit -S -m 'auto tag'
-	- git tag -a -f -m -s latest
-	- git autotag && git push origin master -f --tags
-	@echo "current version:`git describe`"
+	git autotag -commit 'access管理器基本完成' -tag=true -push=true
 mod:
 	go build ./...
 doc:
