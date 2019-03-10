@@ -28,7 +28,6 @@ message FontInfoRequet {
 message FontInfoResult {
     uint32 font_id = 1;
     uint64 express = 2;
-    string name = 3;
 }
 
 
