@@ -7,6 +7,8 @@ init:
 	@git config --local commit.gpgsign true
 	@git config --local autotag.sign true
 git:
+	make protoc
+	make mod
 	git autotag -commit 'access管理器基本完成' -tag=true -push=true
 mod:
 	go build ./...
