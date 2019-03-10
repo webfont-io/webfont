@@ -13,23 +13,6 @@ function fontlist() {
     console.log("maps",maps);
   });
 }
-
-
-function fontbuild() {
-  var request = new messages.FontBuildRequest();
-  request.setApikey("798e7dac-bdd4-4049-b03c-7cce5832e013");
-  request.setFontId(45803);
-  request.setText("中文字体");
-  request.setNeedTtf(true);
-  request.setNeedEot(false);
-  request.setNeedWoff(false);
-
-  client.buildFont(request, function(err, response) {
-    console.log("err", err);
-    console.log("ttf",response.getBytesTtf());
-  });
-}
-
-
 fontlist();
-fontbuild();
+
+
