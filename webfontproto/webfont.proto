@@ -15,17 +15,17 @@ service Greeter {
     //多请求混合
     rpc MultBuildFont(MultFontBuildRequest) returns (MultFontBuildBufResult) {}
 
-    rpc GetFontInfo(FontInfoRequet) returns (FontInfoResult){}
+    rpc GetFontList(FontListRequet) returns (FontListResult){}
     //无删除接口设计
   }
   
 
-message FontInfoRequet {
+message FontListRequet {
     string apikey=1;
 }
 
 
-message FontInfoResult {
+message FontListResult {
     //uint32 font_id = 1;
     //uint64 express = 2;
     map<uint32, int64> fonts = 1;
