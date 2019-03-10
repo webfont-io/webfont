@@ -5,10 +5,10 @@ var grpc = require('grpc');
 
 function main() {
   var client = new services.GreeterClient('localhost:5000',grpc.credentials.createInsecure());
-  var request = new messages.FontListRequest({"apikey":"5873b2bc-84e7-490b-b637-58aaf7d59240"});
+  var request = new messages.FontListRequest();
+  request.setApikey("5873b2bc-84e7-490b-b637-58aaf7d59240")
   client.fontList(request, function(err, response) {
-    console.log('Greeting:', response.getMessage());
+    console.log('Greeting:', response);
   });
 }
-
 main();
