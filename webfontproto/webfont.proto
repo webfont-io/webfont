@@ -40,7 +40,6 @@ message MultFontBuildRequest {
     repeated FontBuildRequest items=1;
 }
 
-
 message FontBuildBufResult {
     uint32 font_id =1 ;
     uint32 font_format_version=2;   //字体格式版本
