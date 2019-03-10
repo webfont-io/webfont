@@ -15,8 +15,9 @@ service Greeter {
     //多请求混合
     rpc MultBuildFont(MultFontBuildRequest) returns (MultFontBuildBufResult) {}
 
+    //获得字体列表
     rpc FontList(FontListRequet) returns (FontListResult){}
-    //无删除接口设计
+    
   }
   
 

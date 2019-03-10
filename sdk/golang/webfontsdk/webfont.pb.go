@@ -410,6 +410,7 @@ type GreeterClient interface {
 	BuildFont(ctx context.Context, in *FontBuildRequest, opts ...grpc.CallOption) (*FontBuildBufResult, error)
 	//多请求混合
 	MultBuildFont(ctx context.Context, in *MultFontBuildRequest, opts ...grpc.CallOption) (*MultFontBuildBufResult, error)
+	//获得字体列表
 	FontList(ctx context.Context, in *FontListRequet, opts ...grpc.CallOption) (*FontListResult, error)
 }
 
@@ -454,6 +455,7 @@ type GreeterServer interface {
 	BuildFont(context.Context, *FontBuildRequest) (*FontBuildBufResult, error)
 	//多请求混合
 	MultBuildFont(context.Context, *MultFontBuildRequest) (*MultFontBuildBufResult, error)
+	//获得字体列表
 	FontList(context.Context, *FontListRequet) (*FontListResult, error)
 }
 
