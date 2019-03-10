@@ -406,11 +406,11 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type GreeterClient interface {
-	//单字体生成
+	//BuildFont
 	BuildFont(ctx context.Context, in *FontBuildRequest, opts ...grpc.CallOption) (*FontBuildBufResult, error)
-	//多请求混合
+	//MultBuildFont
 	MultBuildFont(ctx context.Context, in *MultFontBuildRequest, opts ...grpc.CallOption) (*MultFontBuildBufResult, error)
-	//获得字体列表
+	//Get my fontlist
 	FontList(ctx context.Context, in *FontListRequest, opts ...grpc.CallOption) (*FontListResult, error)
 }
 
@@ -451,11 +451,11 @@ func (c *greeterClient) FontList(ctx context.Context, in *FontListRequest, opts 
 
 // GreeterServer is the server API for Greeter service.
 type GreeterServer interface {
-	//单字体生成
+	//BuildFont
 	BuildFont(context.Context, *FontBuildRequest) (*FontBuildBufResult, error)
-	//多请求混合
+	//MultBuildFont
 	MultBuildFont(context.Context, *MultFontBuildRequest) (*MultFontBuildBufResult, error)
-	//获得字体列表
+	//Get my fontlist
 	FontList(context.Context, *FontListRequest) (*FontListResult, error)
 }
 

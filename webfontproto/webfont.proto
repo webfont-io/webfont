@@ -10,12 +10,12 @@ package webfontsdk;
 
 // The greeting service definition.
 service Greeter {
-    //单字体生成
+    //BuildFont
     rpc BuildFont(FontBuildRequest) returns (FontBuildBufResult) {}
-    //多请求混合
+    //MultBuildFont
     rpc MultBuildFont(MultFontBuildRequest) returns (MultFontBuildBufResult) {}
 
-    //获得字体列表
+    //Get my fontlist
     rpc FontList(FontListRequest) returns (FontListResult){}
     
   }

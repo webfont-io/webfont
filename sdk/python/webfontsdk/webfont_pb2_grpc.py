@@ -36,21 +36,21 @@ class GreeterServicer(object):
   """
 
   def BuildFont(self, request, context):
-    """单字体生成
+    """BuildFont
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def MultBuildFont(self, request, context):
-    """多请求混合
+    """MultBuildFont
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def FontList(self, request, context):
-    """获得字体列表
+    """Get my fontlist
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

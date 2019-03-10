@@ -1,2 +1,0 @@
-from webfontsdk.webfont_pb2 import webfont_pb2
-from webfontsdk.webfont_pb2_grpc import webfont_pb2_grpc

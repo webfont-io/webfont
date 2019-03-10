@@ -21,8 +21,8 @@ import logging
 import grpc
 
 
-import webfontsdk.webfont_pb2
-import webfontsdk.webfont_pb2_grpc
+import webfont_pb2
+import webfont_pb2_grpc
 
 def run():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
@@ -30,9 +30,15 @@ def run():
     # of the code.
     with grpc.insecure_channel('localhost:5000') as channel:
         stub = webfont_pb2_grpc.GreeterStub(channel)
-        response = stub.FontList(webfont_pb2.FontListRequest(api='you'))
-    print("Greeter client received: " + response.message)
-
+        response = stub.FontList(webfont_pb2.FontListRequest(apikey='5873b2bc-84e7-490b-b637-58aaf7d59240'))
+        print("Greeter client received: ",response)
+        response = stub.BuildFont(webfont_pb2.FontBuildRequest(
+            apikey='5873b2bc-84e7-490b-b637-58aaf7d59240',
+            font_id=168,
+            text='中文字体',
+            need_ttf=True
+        ))
+        print("BuildFont received: ")
 
 if __name__ == '__main__':
     logging.basicConfig()
