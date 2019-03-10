@@ -9,7 +9,8 @@ init:
 git:
 	make protoc
 	make mod
-	git autotag -commit 'access管理器基本完成' -tag=true -push=true
+	git autotag -commit 'auto git' -push=true	
+	#-tag=true 
 mod:
 	go build ./...
 doc:
