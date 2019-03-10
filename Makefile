@@ -19,5 +19,4 @@ doc:
 	@docker run --rm -it -v ${PWD}/docs/:/var/www/ -p 80:80 svenbrnn/alpine-lighttpd2:latest
 protoc:
 	protoc -I=webfontproto/ webfontproto/webfont.proto --go_out=plugins=grpc:sdk/golang/webfontsdk
-	#protoc -I=webfontproto/ --python_out=sdk/python/webfontsdk webfontproto/webfont.proto
 	python -m grpc_tools.protoc -Iwebfontproto/ --python_out=sdk/python/webfontsdk --grpc_python_out=sdk/python/webfontsdk webfontproto/webfont.proto

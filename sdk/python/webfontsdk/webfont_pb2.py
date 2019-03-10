@@ -19,21 +19,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='webfontsdk',
   syntax='proto3',
   serialized_options=_b('\n\020io.webfont.protoB\014WebfontProtoP\001'),
-  serialized_pb=_b('\n\rwebfont.proto\x12\nwebfontsdk\" \n\x0e\x46ontListRequet\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\"t\n\x0e\x46ontListResult\x12\x34\n\x05\x66onts\x18\x01 \x03(\x0b\x32%.webfontsdk.FontListResult.FontsEntry\x1a,\n\nFontsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\"x\n\x10\x46ontBuildRequest\x12\x0f\n\x07\x66ont_id\x18\x01 \x01(\r\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0e\n\x06\x61pikey\x18\x03 \x01(\t\x12\x10\n\x08need_ttf\x18\x04 \x01(\x08\x12\x10\n\x08need_eot\x18\x05 \x01(\x08\x12\x11\n\tneed_woff\x18\x06 \x01(\x08\"C\n\x14MultFontBuildRequest\x12+\n\x05items\x18\x01 \x03(\x0b\x32\x1c.webfontsdk.FontBuildRequest\"\xa4\x01\n\x12\x46ontBuildBufResult\x12\x0f\n\x07\x66ont_id\x18\x01 \x01(\r\x12\x1b\n\x13\x66ont_format_version\x18\x02 \x01(\r\x12\x15\n\rfont_checksum\x18\x03 \x01(\r\x12\x0f\n\x07name_en\x18\x04 \x01(\t\x12\x11\n\tbytes_ttf\x18\x05 \x01(\x0c\x12\x11\n\tbytes_eot\x18\x06 \x01(\x0c\x12\x12\n\nbytes_woff\x18\x07 \x01(\x0c\"G\n\x16MultFontBuildBufResult\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.webfontsdk.FontBuildBufResult2\xf5\x01\n\x07Greeter\x12K\n\tBuildFont\x12\x1c.webfontsdk.FontBuildRequest\x1a\x1e.webfontsdk.FontBuildBufResult\"\x00\x12W\n\rMultBuildFont\x12 .webfontsdk.MultFontBuildRequest\x1a\".webfontsdk.MultFontBuildBufResult\"\x00\x12\x44\n\x08\x46ontList\x12\x1a.webfontsdk.FontListRequet\x1a\x1a.webfontsdk.FontListResult\"\x00\x42\"\n\x10io.webfont.protoB\x0cWebfontProtoP\x01\x62\x06proto3')
+  serialized_pb=_b('\n\rwebfont.proto\x12\nwebfontsdk\"!\n\x0f\x46ontListRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\"t\n\x0e\x46ontListResult\x12\x34\n\x05\x66onts\x18\x01 \x03(\x0b\x32%.webfontsdk.FontListResult.FontsEntry\x1a,\n\nFontsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\"x\n\x10\x46ontBuildRequest\x12\x0f\n\x07\x66ont_id\x18\x01 \x01(\r\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0e\n\x06\x61pikey\x18\x03 \x01(\t\x12\x10\n\x08need_ttf\x18\x04 \x01(\x08\x12\x10\n\x08need_eot\x18\x05 \x01(\x08\x12\x11\n\tneed_woff\x18\x06 \x01(\x08\"C\n\x14MultFontBuildRequest\x12+\n\x05items\x18\x01 \x03(\x0b\x32\x1c.webfontsdk.FontBuildRequest\"\xa4\x01\n\x12\x46ontBuildBufResult\x12\x0f\n\x07\x66ont_id\x18\x01 \x01(\r\x12\x1b\n\x13\x66ont_format_version\x18\x02 \x01(\r\x12\x15\n\rfont_checksum\x18\x03 \x01(\r\x12\x0f\n\x07name_en\x18\x04 \x01(\t\x12\x11\n\tbytes_ttf\x18\x05 \x01(\x0c\x12\x11\n\tbytes_eot\x18\x06 \x01(\x0c\x12\x12\n\nbytes_woff\x18\x07 \x01(\x0c\"G\n\x16MultFontBuildBufResult\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.webfontsdk.FontBuildBufResult2\xf6\x01\n\x07Greeter\x12K\n\tBuildFont\x12\x1c.webfontsdk.FontBuildRequest\x1a\x1e.webfontsdk.FontBuildBufResult\"\x00\x12W\n\rMultBuildFont\x12 .webfontsdk.MultFontBuildRequest\x1a\".webfontsdk.MultFontBuildBufResult\"\x00\x12\x45\n\x08\x46ontList\x12\x1b.webfontsdk.FontListRequest\x1a\x1a.webfontsdk.FontListResult\"\x00\x42\"\n\x10io.webfont.protoB\x0cWebfontProtoP\x01\x62\x06proto3')
 )
 
 
 
 
-_FONTLISTREQUET = _descriptor.Descriptor(
-  name='FontListRequet',
-  full_name='webfontsdk.FontListRequet',
+_FONTLISTREQUEST = _descriptor.Descriptor(
+  name='FontListRequest',
+  full_name='webfontsdk.FontListRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='apikey', full_name='webfontsdk.FontListRequet.apikey', index=0,
+      name='apikey', full_name='webfontsdk.FontListRequest.apikey', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -52,7 +52,7 @@ _FONTLISTREQUET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=29,
-  serialized_end=61,
+  serialized_end=62,
 )
 
 
@@ -89,8 +89,8 @@ _FONTLISTRESULT_FONTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=135,
-  serialized_end=179,
+  serialized_start=136,
+  serialized_end=180,
 )
 
 _FONTLISTRESULT = _descriptor.Descriptor(
@@ -119,8 +119,8 @@ _FONTLISTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=63,
-  serialized_end=179,
+  serialized_start=64,
+  serialized_end=180,
 )
 
 
@@ -185,8 +185,8 @@ _FONTBUILDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=181,
-  serialized_end=301,
+  serialized_start=182,
+  serialized_end=302,
 )
 
 
@@ -216,8 +216,8 @@ _MULTFONTBUILDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=303,
-  serialized_end=370,
+  serialized_start=304,
+  serialized_end=371,
 )
 
 
@@ -289,8 +289,8 @@ _FONTBUILDBUFRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=373,
-  serialized_end=537,
+  serialized_start=374,
+  serialized_end=538,
 )
 
 
@@ -320,15 +320,15 @@ _MULTFONTBUILDBUFRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=539,
-  serialized_end=610,
+  serialized_start=540,
+  serialized_end=611,
 )
 
 _FONTLISTRESULT_FONTSENTRY.containing_type = _FONTLISTRESULT
 _FONTLISTRESULT.fields_by_name['fonts'].message_type = _FONTLISTRESULT_FONTSENTRY
 _MULTFONTBUILDREQUEST.fields_by_name['items'].message_type = _FONTBUILDREQUEST
 _MULTFONTBUILDBUFRESULT.fields_by_name['items'].message_type = _FONTBUILDBUFRESULT
-DESCRIPTOR.message_types_by_name['FontListRequet'] = _FONTLISTREQUET
+DESCRIPTOR.message_types_by_name['FontListRequest'] = _FONTLISTREQUEST
 DESCRIPTOR.message_types_by_name['FontListResult'] = _FONTLISTRESULT
 DESCRIPTOR.message_types_by_name['FontBuildRequest'] = _FONTBUILDREQUEST
 DESCRIPTOR.message_types_by_name['MultFontBuildRequest'] = _MULTFONTBUILDREQUEST
@@ -336,12 +336,12 @@ DESCRIPTOR.message_types_by_name['FontBuildBufResult'] = _FONTBUILDBUFRESULT
 DESCRIPTOR.message_types_by_name['MultFontBuildBufResult'] = _MULTFONTBUILDBUFRESULT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-FontListRequet = _reflection.GeneratedProtocolMessageType('FontListRequet', (_message.Message,), dict(
-  DESCRIPTOR = _FONTLISTREQUET,
+FontListRequest = _reflection.GeneratedProtocolMessageType('FontListRequest', (_message.Message,), dict(
+  DESCRIPTOR = _FONTLISTREQUEST,
   __module__ = 'webfont_pb2'
-  # @@protoc_insertion_point(class_scope:webfontsdk.FontListRequet)
+  # @@protoc_insertion_point(class_scope:webfontsdk.FontListRequest)
   ))
-_sym_db.RegisterMessage(FontListRequet)
+_sym_db.RegisterMessage(FontListRequest)
 
 FontListResult = _reflection.GeneratedProtocolMessageType('FontListResult', (_message.Message,), dict(
 
@@ -396,8 +396,8 @@ _GREETER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=613,
-  serialized_end=858,
+  serialized_start=614,
+  serialized_end=860,
   methods=[
   _descriptor.MethodDescriptor(
     name='BuildFont',
@@ -422,7 +422,7 @@ _GREETER = _descriptor.ServiceDescriptor(
     full_name='webfontsdk.Greeter.FontList',
     index=2,
     containing_service=None,
-    input_type=_FONTLISTREQUET,
+    input_type=_FONTLISTREQUEST,
     output_type=_FONTLISTRESULT,
     serialized_options=None,
   ),

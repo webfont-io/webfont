@@ -16,12 +16,12 @@ service Greeter {
     rpc MultBuildFont(MultFontBuildRequest) returns (MultFontBuildBufResult) {}
 
     //获得字体列表
-    rpc FontList(FontListRequet) returns (FontListResult){}
+    rpc FontList(FontListRequest) returns (FontListResult){}
     
   }
   
 
-message FontListRequet {
+message FontListRequest {
     string apikey=1;
 }
 

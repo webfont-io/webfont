@@ -26,7 +26,7 @@ class GreeterStub(object):
         )
     self.FontList = channel.unary_unary(
         '/webfontsdk.Greeter/FontList',
-        request_serializer=webfont__pb2.FontListRequet.SerializeToString,
+        request_serializer=webfont__pb2.FontListRequest.SerializeToString,
         response_deserializer=webfont__pb2.FontListResult.FromString,
         )
 
@@ -71,7 +71,7 @@ def add_GreeterServicer_to_server(servicer, server):
       ),
       'FontList': grpc.unary_unary_rpc_method_handler(
           servicer.FontList,
-          request_deserializer=webfont__pb2.FontListRequet.FromString,
+          request_deserializer=webfont__pb2.FontListRequest.FromString,
           response_serializer=webfont__pb2.FontListResult.SerializeToString,
       ),
   }
