@@ -14,16 +14,21 @@ service Greeter {
     rpc BuildFont(FontBuildRequest) returns (FontBuildBufResult) {}
     //多请求混合
     rpc MultBuildFont(MultFontBuildRequest) returns (MultFontBuildBufResult) {}
+
+    rpc GetFontInfo(FontInfoRequet) returns (FontInfoResult){}
     //无删除接口设计
   }
   
 
-message FontInfo {
+message FontInfoRequet {
+    string apikey=1;
+}
+
+
+message FontInfoResult {
     uint32 font_id = 1;
-    string name_en = 2;
-    string name_cn = 3;
-    string name_jp=4;
-    string name_kr=5;
+    uint64 express = 2;
+    string name = 3;
 }
 
 
