@@ -23,7 +23,7 @@ func Test_build(t *testing.T) {
 	defer cancel()
 	req := &FontBuildRequest{
 		FontId:   45803,
-		Apikey:   "8d9ebc26-39fc-4415-ab16-731d23aa7f97",
+		Apikey:   "5873b2bc-84e7-490b-b637-58aaf7d59240",
 		Text:     "苏打粉地方",
 		NeedTtf:  true,
 		NeedEot:  true,
@@ -50,8 +50,8 @@ func Test_getlist(t *testing.T) {
 	c := NewGreeterClient(conn)
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
-	req := &FontListRequet{
-		Apikey: "8d9ebc26-39fc-4415-ab16-731d23aa7f97",
+	req := &FontListRequest{
+		Apikey: "5873b2bc-84e7-490b-b637-58aaf7d59240",
 	}
 	if ret, err := c.FontList(ctx, req); err != nil {
 		if actual, ok := status.FromError(err); ok {

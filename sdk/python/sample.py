@@ -30,7 +30,7 @@ def run():
     # of the code.
     with grpc.insecure_channel('localhost:5000') as channel:
         stub = webfont_pb2_grpc.GreeterStub(channel)
-        response = stub.FontList(webfont_pb2.FontListRequet(api='you'))
+        response = stub.FontList(webfont_pb2.FontListRequest(api='you'))
     print("Greeter client received: " + response.message)
 
 
