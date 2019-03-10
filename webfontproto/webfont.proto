@@ -17,7 +17,10 @@ message FontInfo {
 
 message Fontbuf {
     uint32 font_id =1 ;
-    bytes bytes_ttf=2;
-    bytes bytes_eot=3;
-    bytes bytes_woff=4;
+    uint32 font_format_version=2;   //字体格式版本
+    uint32 font_checksum=3; //字体的唯一辨识编码
+    string name_en = 4;
+    bytes bytes_ttf=5;
+    bytes bytes_eot=6;
+    bytes bytes_woff=7;
 }
