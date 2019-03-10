@@ -32,6 +32,7 @@ func main() {
 		NeedEot:  true,
 		NeedWoff: true,
 	}
+
 	if ret, err := c.BuildFont(ctx, req); err != nil {
 		if actual, ok := status.FromError(err); ok {
 			log.Println("actual", "code", actual.Code(), "err:", actual.Message())
