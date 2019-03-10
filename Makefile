@@ -24,3 +24,6 @@ protoc:
 	@python -m grpc_tools.protoc -Iwebfontproto/ --python_out=sdk/python --grpc_python_out=sdk/python webfontproto/webfont.proto
 	@echo "nodejs SDK buiding..."
 	@cd webfontproto &&  grpc_tools_node_protoc --js_out=import_style=commonjs,binary:../sdk/node/lib/ --grpc_out=../sdk/node/lib/ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` webfont.proto
+	@echo "ruby SDK buildint..."
+	#gem install grpc gem install grpc-tools
+	@/usr/local/lib/ruby/gems/2.6.0/bin/grpc_tools_ruby_protoc -I webfontproto/ --ruby_out=sdk/ruby/ --grpc_out=sdk/ruby/ webfontproto/webfont.proto
