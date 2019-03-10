@@ -29,6 +29,9 @@ message FontBuildRequest {
     uint32 font_id=1;
     string text=2;
     string apikey=3;
+    bool need_ttf=4;
+    bool need_eot=5;
+    bool need_woff=6;
 }
 
 
