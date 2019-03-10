@@ -4,7 +4,17 @@ option java_multiple_files = true;
 option java_package = "io.webfont.proto";
 option java_outer_classname = "WebfontProto";
 
-package webfontproto;
+package webfontsdk;
+
+
+
+// The greeting service definition.
+service Greeter {
+    //获得AccessKey
+    rpc BuildFont(FontBuildRequest) returns (FontBuildBufResult) {}
+    //无删除接口设计
+  }
+  
 
 message FontInfo {
     uint32 font_id = 1;
@@ -15,7 +25,14 @@ message FontInfo {
 }
 
 
-message Fontbuf {
+message FontBuildRequest {
+    uint32 font_id=1;
+    string text=2;
+    string apikey=3;
+}
+
+
+message FontBuildBufResult {
     uint32 font_id =1 ;
     uint32 font_format_version=2;   //字体格式版本
     uint32 font_checksum=3; //字体的唯一辨识编码
@@ -23,4 +40,8 @@ message Fontbuf {
     bytes bytes_ttf=5;
     bytes bytes_eot=6;
     bytes bytes_woff=7;
+}
+
+message MultFontBuildBufResult {
+    repeated FontBuildBufResult items = 1;
 }
