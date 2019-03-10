@@ -9,8 +9,7 @@ init:
 git:
 	make protoc
 	make mod
-	git autotag -commit 'auto git' -push=true	
-	#-tag=true 
+	git autotag -commit 'auto git' -tag=false -push=true
 mod:
 	go build ./...
 doc:
