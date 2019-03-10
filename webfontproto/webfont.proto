@@ -28,7 +28,7 @@ message FontInfoRequet {
 message FontInfoResult {
     //uint32 font_id = 1;
     //uint64 express = 2;
-    map<string, int64> fonts = 1;
+    map<uint32, int64> fonts = 1;
 }
 
 
