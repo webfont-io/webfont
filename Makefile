@@ -23,4 +23,4 @@ protoc:
 	@echo "golang SDK buiding..."
 	python -m grpc_tools.protoc -Iwebfontproto/ --python_out=sdk/python --grpc_python_out=sdk/python webfontproto/webfont.proto
 	@echo "nodejs SDK buiding..."
-	cd webfontproto &&  grpc_tools_node_protoc --js_out=import_style=commonjs,binary:../sdk/node/ --grpc_out=../sdk/node/ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` webfont.proto
+	cd webfontproto &&  grpc_tools_node_protoc --js_out=import_style=commonjs,binary:../sdk/node/lib/ --grpc_out=../sdk/node/lib/ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` webfont.proto
