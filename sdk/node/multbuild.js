@@ -26,15 +26,18 @@ function multfontbuild() {
     item.setNeedWoff(false);
     request.addItems(item);
 
-    client.buildFont(request, function(err, response) {
+    client.multBuildFont(request, function(err, response) {
       if (err!=null) {
           console.log("err Code", err.code, "detail:", err.details)
           return;
       }
-      console.log("ok")
-      //console.log("ttf",response.getBytesTtf().length);
-      //console.log("eot",response.getBytesEot().length);
-      //console.log("woff",response.getBytesWoff().length);
+      items = response.getItemsList();
+      items.forEach(item => {
+        console.log("ttf",item.getBytesTtf().length);
+        console.log("eot",item.getBytesEot().length);
+        console.log("woff",item.getBytesWoff().length);
+      });
+
     });
   }
 
