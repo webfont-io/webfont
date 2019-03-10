@@ -6,9 +6,11 @@ var grpc = require('grpc');
 function main() {
   var client = new services.GreeterClient('localhost:5000',grpc.credentials.createInsecure());
   var request = new messages.FontListRequest();
-  request.setApikey("5873b2bc-84e7-490b-b637-58aaf7d59240")
+  request.setApikey("798e7dac-bdd4-4049-b03c-7cce5832e013")
   client.fontList(request, function(err, response) {
-    console.log('Greeting:', response);
+    console.log("err", err);
+    var maps = response.getFontsMap();
+    console.log("maps",maps);
   });
 }
 main();
