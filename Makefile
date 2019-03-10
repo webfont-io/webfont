@@ -7,7 +7,7 @@ init:
 	@git config --local commit.gpgsign true
 	@git config --local autotag.sign true
 git:
-	- git add . && git commit -S -m 'auto commit' && git push origin master -f --tags
+	git autotag -commit '重构SDK' -tag=true -push=true
 tag:
 	@ make mod
 	- git add . && git commit -S -m 'auto tag'
