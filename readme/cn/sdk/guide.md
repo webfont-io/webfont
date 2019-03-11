@@ -2,7 +2,7 @@
 
 
 - [Golang](sdk-golang.html "golang")
-- [Nodejs](sdk-node.html "nodejs")
+- [Nodejs](sdk-nodejs.html "nodejs")
 - [Java](sdk-node.html "java")
 
 
