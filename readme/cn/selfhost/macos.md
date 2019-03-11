@@ -11,8 +11,7 @@ sudo chmod u+x ./webfont-darwin-amd64
 
 ### 复制
 ```sh
-cp ./webfont-darwin-amd64
- /usr/bin/webfont-api
+sudo mv ./webfont-darwin-amd64 /usr/local/bin/webfont-api
 ```
 
 
