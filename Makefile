@@ -9,7 +9,7 @@ init:
 git:
 	make protoc
 	make mod
-	git autotag -commit 'auto git' -tag=false -push=true
+	git autotag -commit 'java sdk ok' -tag=true -push=true
 mod:
 	go build ./...
 doc:
