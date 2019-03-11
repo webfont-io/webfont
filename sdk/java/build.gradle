@@ -63,14 +63,14 @@ sourceSets {
 
 startScripts.enabled = false
 
-task helloWorldClient(type: CreateStartScripts) {
-    mainClassName = 'io.grpc.examples.helloworld.HelloWorldClient'
-    applicationName = 'hello-world-client'
+task webfontClient(type: CreateStartScripts) {
+    mainClassName = 'io.grpc.sdk.webfont.WebFontClient'
+    applicationName = 'webfont-client'
     outputDir = new File(project.buildDir, 'tmp')
     classpath = startScripts.classpath
 }
 
 applicationDistribution.into('bin') {
-    from(helloWorldClient)
+    from(webfontClient)
     fileMode = 0755
 }
