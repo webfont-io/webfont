@@ -24,7 +24,18 @@ Documents:
         Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/%E7%AE%80%E4%BB%8B/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.md"
         Slug: quick-start-guide
   - "独立部署":
-        - "快速安装":
-          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/guid.md"
+        - "安装指南":
+          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/guide.md"
           Slug: self-host-guide
-    
+        - "docker":
+          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/docker.md"
+          Slug: self-host-docker
+        - "docker-compose":
+          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/docker-compose.md"
+          Slug: self-host-docker-compose
+        - "ubuntu":
+          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/ubuntu.md"
+          Slug: self-host-ubuntu
+        - "Mac os":
+          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/macos.md"
+          Slug: self-host-macos
