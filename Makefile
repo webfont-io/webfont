@@ -28,4 +28,4 @@ protoc:
 	@#gem install grpc gem install grpc-tools
 	@/usr/local/lib/ruby/gems/2.6.0/bin/grpc_tools_ruby_protoc -I webfontproto/ --ruby_out=sdk/ruby/ --grpc_out=sdk/ruby/ webfontproto/webfont.proto
 	@echo "java sdk building"
-	@protoc --java_out=plugins=grpc:sdk/java/ webfontproto/webfont.proto
+	@rm sdk/java/src/main/proto/* && cp webfontproto/webfont.proto sdk/java/src/main/proto/
