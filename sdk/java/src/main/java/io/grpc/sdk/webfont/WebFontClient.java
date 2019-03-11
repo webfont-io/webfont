@@ -131,13 +131,21 @@ public class WebFontClient {
   }
 
 
-  /**
-   * Greet server. If provided, the first element of {@code args} is the name to use in the
-   * greeting.
-   */
+
+
+  /*
+    This is a reusable connection that can be automatically and reconnected.
+    Built-in DNS load balancing, will automatically load balance all ips on the back end according to the incoming host.
+    */
+  public static WebFontClient client = new WebFontClient("localhost", 5000);
+
+
   public static void main(String[] args) throws Exception {
-    WebFontClient client = new WebFontClient("localhost", 5000);
-    client.fontlist();
+    for (int i = 0; i < 20; i++) {
+      client.fontlist();
+      Thread.sleep(1000);       //please close selfthost then reopen, you can enjoy auto reconnected.
+    }
+
     client.buildfont();
     client.multbuild();
   }
