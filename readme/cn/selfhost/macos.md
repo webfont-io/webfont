@@ -15,4 +15,13 @@ sudo mv ./webfont-darwin-amd64 /usr/local/bin/webfont-api
 ```
 
 
+## 运行
+```sh
+webfont-api
+```
+
+## 配置
+    配置文件在 /use/local/etc/webfont/conf/config.yml
+
+
 
