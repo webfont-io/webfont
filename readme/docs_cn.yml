@@ -25,6 +25,6 @@ Documents:
         Slug: quick-start-guide
   - "独立部署":
         - "快速安装":
-          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/install/instraction.md"
+          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/guid.md"
           Slug: self-host-guide
     
