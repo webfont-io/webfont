@@ -1,4 +1,4 @@
-## java sdk
+## golang sdk
 
 
 ## 下载配套的独立部署程序
