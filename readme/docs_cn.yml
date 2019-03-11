@@ -39,3 +39,6 @@ Documents:
         - "Mac os":
           Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/macos.md"
           Slug: self-host-macos
+        - "Windows":
+          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/windows.md"
+          Slug: self-host-windows
