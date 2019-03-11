@@ -14,3 +14,5 @@
     linux下 配置文件路径为：/etc/webfont/conf/config.yml
     
     mac下 配置文件路径为：/usr/local/etc/webfont/conf/config.yml
+
+    Docker下请用docker run -it 命令进入容器后在/etc/webfont/conf/查看

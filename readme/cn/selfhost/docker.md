@@ -1,5 +1,6 @@
 
 ## 推荐方式：Docker
+    docker方式基于alpine3.9构建
 ``` sh
 #如果已经运行了先停止运行
 docker stop webfont-api && docker rm webfont-api
