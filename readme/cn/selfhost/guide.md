@@ -9,3 +9,8 @@
 - [Windows](self-host-windows.html "Mac OS")
   
 ### 请根据自身情况选择适合您的二进制包来安装
+
+## 配置文件
+    linux下 配置文件路径为：/etc/webfont/conf/config.yml
+    
+    mac下 配置文件路径为：/usr/local/etc/webfont/conf/config.yml
