@@ -5,7 +5,7 @@
 [下载教程](self-host-guide.html "下载教程")
 ## 下载sdk
 ```sh
-go get github.com/sdk/golang/webfontsdk
+go get github.com/webfont-io/webfont/sdk/golang/webfontsdk
 ```
 
 ## 使用sample
