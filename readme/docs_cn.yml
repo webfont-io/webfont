@@ -1,6 +1,6 @@
 Site: "webfont 文档中心"
 Output: "docs/cn"
-CDN: "/assets"
+CDN: "https://docs.webfont.io/assets"
 Logo: "/assets/img/webfont.png"
 HtmlBase: "/cn" #example /cn
 PageOnly: true
@@ -24,8 +24,7 @@ Documents:
         Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/%E7%AE%80%E4%BB%8B/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.md"
         Slug: quick-start-guide
   - "独立部署":
-      - "安装独立部署软件":
-          - "快速安装":
-            Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/install/instraction.md"
-            Slug: self-host-guide
-      
+        - "快速安装":
+          Link: "https://github.com/webfont-io/webfont/blob/master/readme/cn/selfhost/install/instraction.md"
+          Slug: self-host-guide
+    

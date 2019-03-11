@@ -1,6 +1,6 @@
 Site: "webfont documents"
 Output: "docs"
-CDN: "/assets"
+CDN: "https://docs.webfont.io/assets"
 Logo: "/assets/img/webfont.png"
 HtmlBase: "" #example /cn
 PageOnly: true
