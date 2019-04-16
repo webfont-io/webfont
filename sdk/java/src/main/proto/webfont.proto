@@ -93,7 +93,8 @@ message GetProfileWithoutMapResult {
 
 message GetUnicodeIndexsRequest {
     string apikey=1;
-    uint32 unicode=2;
+    uint32 font_id=2;
+    uint32 unicode=3;
 }
 
 message GetUnicodeIndexsResult {
@@ -103,7 +104,8 @@ message GetUnicodeIndexsResult {
 
 message GetGlyfsIndexRequest {
     string apikey=1;
-    uint32 index=2;
+    uint32 font_id=2;
+    uint32 index=3;
 }
 
 message GetGlyfsIndexResult {
@@ -114,7 +116,8 @@ message GetGlyfsIndexResult {
 
 message GetGlyfsUnicodeRequest {
     string apikey=1;
-    uint32 unicode=2;
+    uint32 font_id=2;
+    uint32 unicode=3;
 }
 
 
@@ -126,7 +129,8 @@ message GetGlyfsUnicodeResult {
 
 message GetMultGlyfsUnicodeRequest {
     string apikey=1;
-    repeated uint32 unicode=2;
+    uint32 font_id=2;
+    repeated uint32 unicode=3;
 }
 
 message GetMultGlyfsUnicodeResult {

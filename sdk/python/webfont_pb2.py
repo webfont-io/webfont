@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='webfontsdk',
   syntax='proto3',
   serialized_options=_b('\n\023io.grpc.sdk.webfontB\014WebfontProtoP\001'),
-  serialized_pb=_b('\n\rwebfont.proto\x12\nwebfontsdk\"!\n\x0f\x46ontListRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\"t\n\x0e\x46ontListResult\x12\x34\n\x05\x66onts\x18\x01 \x03(\x0b\x32%.webfontsdk.FontListResult.FontsEntry\x1a,\n\nFontsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\"\x8c\x01\n\x10\x46ontBuildRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07\x66ont_id\x18\x02 \x01(\r\x12\x0c\n\x04text\x18\x03 \x01(\t\x12\x10\n\x08need_ttf\x18\x04 \x01(\x08\x12\x10\n\x08need_eot\x18\x05 \x01(\x08\x12\x11\n\tneed_woff\x18\x06 \x01(\x08\x12\x12\n\nneed_woff2\x18\x07 \x01(\x08\"C\n\x14MultFontBuildRequest\x12+\n\x05items\x18\x01 \x03(\x0b\x32\x1c.webfontsdk.FontBuildRequest\"\xb9\x01\n\x12\x46ontBuildBufResult\x12\x0f\n\x07\x66ont_id\x18\x01 \x01(\r\x12\x1b\n\x13\x66ont_format_version\x18\x02 \x01(\r\x12\x15\n\rfont_checksum\x18\x03 \x01(\r\x12\x0f\n\x07name_en\x18\x04 \x01(\t\x12\x11\n\tbytes_ttf\x18\x05 \x01(\x0c\x12\x11\n\tbytes_eot\x18\x06 \x01(\x0c\x12\x12\n\nbytes_woff\x18\x07 \x01(\x0c\x12\x13\n\x0b\x62ytes_woff2\x18\x08 \x01(\x0c\"G\n\x16MultFontBuildBufResult\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.webfontsdk.FontBuildBufResult\">\n\x1bGetProfileWithoutMapRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07\x66ont_id\x18\x02 \x01(\r\";\n\x1aGetProfileWithoutMapResult\x12\x0f\n\x07\x66ont_id\x18\x01 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\":\n\x17GetUnicodeIndexsRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07unicode\x18\x02 \x01(\r\"(\n\x16GetUnicodeIndexsResult\x12\x0e\n\x06indexs\x18\x01 \x03(\r\"5\n\x14GetGlyfsIndexRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\"2\n\x13GetGlyfsIndexResult\x12\r\n\x05index\x18\x01 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"9\n\x16GetGlyfsUnicodeRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07unicode\x18\x02 \x01(\r\"X\n\x15GetGlyfsUnicodeResult\x12\x0f\n\x07unicode\x18\x01 \x01(\r\x12.\n\x05\x64\x61tas\x18\x02 \x03(\x0b\x32\x1f.webfontsdk.GetGlyfsIndexResult\"=\n\x1aGetMultGlyfsUnicodeRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07unicode\x18\x02 \x03(\r\"M\n\x19GetMultGlyfsUnicodeResult\x12\x30\n\x05items\x18\x01 \x03(\x0b\x32!.webfontsdk.GetGlyfsUnicodeResult2\xda\x05\n\x07Greeter\x12K\n\tBuildFont\x12\x1c.webfontsdk.FontBuildRequest\x1a\x1e.webfontsdk.FontBuildBufResult\"\x00\x12W\n\rMultBuildFont\x12 .webfontsdk.MultFontBuildRequest\x1a\".webfontsdk.MultFontBuildBufResult\"\x00\x12\x45\n\x08\x46ontList\x12\x1b.webfontsdk.FontListRequest\x1a\x1a.webfontsdk.FontListResult\"\x00\x12i\n\x14GetProfileWithoutMap\x12\'.webfontsdk.GetProfileWithoutMapRequest\x1a&.webfontsdk.GetProfileWithoutMapResult\"\x00\x12]\n\x10GetUnicodeIndexs\x12#.webfontsdk.GetUnicodeIndexsRequest\x1a\".webfontsdk.GetUnicodeIndexsResult\"\x00\x12T\n\rGetGlyfsIndex\x12 .webfontsdk.GetGlyfsIndexRequest\x1a\x1f.webfontsdk.GetGlyfsIndexResult\"\x00\x12Z\n\x0fGetGlyfsUnicode\x12\".webfontsdk.GetGlyfsUnicodeRequest\x1a!.webfontsdk.GetGlyfsUnicodeResult\"\x00\x12\x66\n\x13GetMultGlyfsUnicode\x12&.webfontsdk.GetMultGlyfsUnicodeRequest\x1a%.webfontsdk.GetMultGlyfsUnicodeResult\"\x00\x42%\n\x13io.grpc.sdk.webfontB\x0cWebfontProtoP\x01\x62\x06proto3')
+  serialized_pb=_b('\n\rwebfont.proto\x12\nwebfontsdk\"!\n\x0f\x46ontListRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\"t\n\x0e\x46ontListResult\x12\x34\n\x05\x66onts\x18\x01 \x03(\x0b\x32%.webfontsdk.FontListResult.FontsEntry\x1a,\n\nFontsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\"\x8c\x01\n\x10\x46ontBuildRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07\x66ont_id\x18\x02 \x01(\r\x12\x0c\n\x04text\x18\x03 \x01(\t\x12\x10\n\x08need_ttf\x18\x04 \x01(\x08\x12\x10\n\x08need_eot\x18\x05 \x01(\x08\x12\x11\n\tneed_woff\x18\x06 \x01(\x08\x12\x12\n\nneed_woff2\x18\x07 \x01(\x08\"C\n\x14MultFontBuildRequest\x12+\n\x05items\x18\x01 \x03(\x0b\x32\x1c.webfontsdk.FontBuildRequest\"\xb9\x01\n\x12\x46ontBuildBufResult\x12\x0f\n\x07\x66ont_id\x18\x01 \x01(\r\x12\x1b\n\x13\x66ont_format_version\x18\x02 \x01(\r\x12\x15\n\rfont_checksum\x18\x03 \x01(\r\x12\x0f\n\x07name_en\x18\x04 \x01(\t\x12\x11\n\tbytes_ttf\x18\x05 \x01(\x0c\x12\x11\n\tbytes_eot\x18\x06 \x01(\x0c\x12\x12\n\nbytes_woff\x18\x07 \x01(\x0c\x12\x13\n\x0b\x62ytes_woff2\x18\x08 \x01(\x0c\"G\n\x16MultFontBuildBufResult\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.webfontsdk.FontBuildBufResult\">\n\x1bGetProfileWithoutMapRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07\x66ont_id\x18\x02 \x01(\r\";\n\x1aGetProfileWithoutMapResult\x12\x0f\n\x07\x66ont_id\x18\x01 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"K\n\x17GetUnicodeIndexsRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07\x66ont_id\x18\x02 \x01(\r\x12\x0f\n\x07unicode\x18\x03 \x01(\r\"(\n\x16GetUnicodeIndexsResult\x12\x0e\n\x06indexs\x18\x01 \x03(\r\"F\n\x14GetGlyfsIndexRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07\x66ont_id\x18\x02 \x01(\r\x12\r\n\x05index\x18\x03 \x01(\r\"2\n\x13GetGlyfsIndexResult\x12\r\n\x05index\x18\x01 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\"J\n\x16GetGlyfsUnicodeRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07\x66ont_id\x18\x02 \x01(\r\x12\x0f\n\x07unicode\x18\x03 \x01(\r\"X\n\x15GetGlyfsUnicodeResult\x12\x0f\n\x07unicode\x18\x01 \x01(\r\x12.\n\x05\x64\x61tas\x18\x02 \x03(\x0b\x32\x1f.webfontsdk.GetGlyfsIndexResult\"N\n\x1aGetMultGlyfsUnicodeRequest\x12\x0e\n\x06\x61pikey\x18\x01 \x01(\t\x12\x0f\n\x07\x66ont_id\x18\x02 \x01(\r\x12\x0f\n\x07unicode\x18\x03 \x03(\r\"M\n\x19GetMultGlyfsUnicodeResult\x12\x30\n\x05items\x18\x01 \x03(\x0b\x32!.webfontsdk.GetGlyfsUnicodeResult2\xda\x05\n\x07Greeter\x12K\n\tBuildFont\x12\x1c.webfontsdk.FontBuildRequest\x1a\x1e.webfontsdk.FontBuildBufResult\"\x00\x12W\n\rMultBuildFont\x12 .webfontsdk.MultFontBuildRequest\x1a\".webfontsdk.MultFontBuildBufResult\"\x00\x12\x45\n\x08\x46ontList\x12\x1b.webfontsdk.FontListRequest\x1a\x1a.webfontsdk.FontListResult\"\x00\x12i\n\x14GetProfileWithoutMap\x12\'.webfontsdk.GetProfileWithoutMapRequest\x1a&.webfontsdk.GetProfileWithoutMapResult\"\x00\x12]\n\x10GetUnicodeIndexs\x12#.webfontsdk.GetUnicodeIndexsRequest\x1a\".webfontsdk.GetUnicodeIndexsResult\"\x00\x12T\n\rGetGlyfsIndex\x12 .webfontsdk.GetGlyfsIndexRequest\x1a\x1f.webfontsdk.GetGlyfsIndexResult\"\x00\x12Z\n\x0fGetGlyfsUnicode\x12\".webfontsdk.GetGlyfsUnicodeRequest\x1a!.webfontsdk.GetGlyfsUnicodeResult\"\x00\x12\x66\n\x13GetMultGlyfsUnicode\x12&.webfontsdk.GetMultGlyfsUnicodeRequest\x1a%.webfontsdk.GetMultGlyfsUnicodeResult\"\x00\x42%\n\x13io.grpc.sdk.webfontB\x0cWebfontProtoP\x01\x62\x06proto3')
 )
 
 
@@ -430,8 +430,15 @@ _GETUNICODEINDEXSREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='unicode', full_name='webfontsdk.GetUnicodeIndexsRequest.unicode', index=1,
+      name='font_id', full_name='webfontsdk.GetUnicodeIndexsRequest.font_id', index=1,
       number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unicode', full_name='webfontsdk.GetUnicodeIndexsRequest.unicode', index=2,
+      number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -449,7 +456,7 @@ _GETUNICODEINDEXSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=780,
-  serialized_end=838,
+  serialized_end=855,
 )
 
 
@@ -479,8 +486,8 @@ _GETUNICODEINDEXSRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=840,
-  serialized_end=880,
+  serialized_start=857,
+  serialized_end=897,
 )
 
 
@@ -499,8 +506,15 @@ _GETGLYFSINDEXREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='index', full_name='webfontsdk.GetGlyfsIndexRequest.index', index=1,
+      name='font_id', full_name='webfontsdk.GetGlyfsIndexRequest.font_id', index=1,
       number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='index', full_name='webfontsdk.GetGlyfsIndexRequest.index', index=2,
+      number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -517,8 +531,8 @@ _GETGLYFSINDEXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=882,
-  serialized_end=935,
+  serialized_start=899,
+  serialized_end=969,
 )
 
 
@@ -555,8 +569,8 @@ _GETGLYFSINDEXRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=937,
-  serialized_end=987,
+  serialized_start=971,
+  serialized_end=1021,
 )
 
 
@@ -575,8 +589,15 @@ _GETGLYFSUNICODEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='unicode', full_name='webfontsdk.GetGlyfsUnicodeRequest.unicode', index=1,
+      name='font_id', full_name='webfontsdk.GetGlyfsUnicodeRequest.font_id', index=1,
       number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unicode', full_name='webfontsdk.GetGlyfsUnicodeRequest.unicode', index=2,
+      number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -593,8 +614,8 @@ _GETGLYFSUNICODEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=989,
-  serialized_end=1046,
+  serialized_start=1023,
+  serialized_end=1097,
 )
 
 
@@ -631,8 +652,8 @@ _GETGLYFSUNICODERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1048,
-  serialized_end=1136,
+  serialized_start=1099,
+  serialized_end=1187,
 )
 
 
@@ -651,8 +672,15 @@ _GETMULTGLYFSUNICODEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='unicode', full_name='webfontsdk.GetMultGlyfsUnicodeRequest.unicode', index=1,
-      number=2, type=13, cpp_type=3, label=3,
+      name='font_id', full_name='webfontsdk.GetMultGlyfsUnicodeRequest.font_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='unicode', full_name='webfontsdk.GetMultGlyfsUnicodeRequest.unicode', index=2,
+      number=3, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -669,8 +697,8 @@ _GETMULTGLYFSUNICODEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1138,
-  serialized_end=1199,
+  serialized_start=1189,
+  serialized_end=1267,
 )
 
 
@@ -700,8 +728,8 @@ _GETMULTGLYFSUNICODERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1201,
-  serialized_end=1278,
+  serialized_start=1269,
+  serialized_end=1346,
 )
 
 _FONTLISTRESULT_FONTSENTRY.containing_type = _FONTLISTRESULT
@@ -858,8 +886,8 @@ _GREETER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1281,
-  serialized_end=2011,
+  serialized_start=1349,
+  serialized_end=2079,
   methods=[
   _descriptor.MethodDescriptor(
     name='BuildFont',

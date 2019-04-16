@@ -1798,7 +1798,8 @@ proto.webfontsdk.GetUnicodeIndexsRequest.prototype.toObject = function(opt_inclu
 proto.webfontsdk.GetUnicodeIndexsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    unicode: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    unicode: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1841,6 +1842,10 @@ proto.webfontsdk.GetUnicodeIndexsRequest.deserializeBinaryFromReader = function(
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
+      msg.setFontId(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setUnicode(value);
       break;
     default:
@@ -1879,10 +1884,17 @@ proto.webfontsdk.GetUnicodeIndexsRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getUnicode();
+  f = message.getFontId();
   if (f !== 0) {
     writer.writeUint32(
       2,
+      f
+    );
+  }
+  f = message.getUnicode();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
       f
     );
   }
@@ -1905,17 +1917,32 @@ proto.webfontsdk.GetUnicodeIndexsRequest.prototype.setApikey = function(value) {
 
 
 /**
- * optional uint32 unicode = 2;
+ * optional uint32 font_id = 2;
  * @return {number}
  */
-proto.webfontsdk.GetUnicodeIndexsRequest.prototype.getUnicode = function() {
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.getFontId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /** @param {number} value */
-proto.webfontsdk.GetUnicodeIndexsRequest.prototype.setUnicode = function(value) {
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.setFontId = function(value) {
   jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 unicode = 3;
+ * @return {number}
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.getUnicode = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.setUnicode = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -2130,7 +2157,8 @@ proto.webfontsdk.GetGlyfsIndexRequest.prototype.toObject = function(opt_includeI
 proto.webfontsdk.GetGlyfsIndexRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    index: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    index: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2173,6 +2201,10 @@ proto.webfontsdk.GetGlyfsIndexRequest.deserializeBinaryFromReader = function(msg
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
+      msg.setFontId(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setIndex(value);
       break;
     default:
@@ -2211,10 +2243,17 @@ proto.webfontsdk.GetGlyfsIndexRequest.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getIndex();
+  f = message.getFontId();
   if (f !== 0) {
     writer.writeUint32(
       2,
+      f
+    );
+  }
+  f = message.getIndex();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
       f
     );
   }
@@ -2237,17 +2276,32 @@ proto.webfontsdk.GetGlyfsIndexRequest.prototype.setApikey = function(value) {
 
 
 /**
- * optional uint32 index = 2;
+ * optional uint32 font_id = 2;
  * @return {number}
  */
-proto.webfontsdk.GetGlyfsIndexRequest.prototype.getIndex = function() {
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.getFontId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /** @param {number} value */
-proto.webfontsdk.GetGlyfsIndexRequest.prototype.setIndex = function(value) {
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.setFontId = function(value) {
   jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 index = 3;
+ * @return {number}
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.getIndex = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.setIndex = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -2492,7 +2546,8 @@ proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.toObject = function(opt_includ
 proto.webfontsdk.GetGlyfsUnicodeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    unicode: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    unicode: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2535,6 +2590,10 @@ proto.webfontsdk.GetGlyfsUnicodeRequest.deserializeBinaryFromReader = function(m
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint32());
+      msg.setFontId(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setUnicode(value);
       break;
     default:
@@ -2573,10 +2632,17 @@ proto.webfontsdk.GetGlyfsUnicodeRequest.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getUnicode();
+  f = message.getFontId();
   if (f !== 0) {
     writer.writeUint32(
       2,
+      f
+    );
+  }
+  f = message.getUnicode();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
       f
     );
   }
@@ -2599,17 +2665,32 @@ proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.setApikey = function(value) {
 
 
 /**
- * optional uint32 unicode = 2;
+ * optional uint32 font_id = 2;
  * @return {number}
  */
-proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.getUnicode = function() {
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.getFontId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /** @param {number} value */
-proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.setUnicode = function(value) {
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.setFontId = function(value) {
   jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 unicode = 3;
+ * @return {number}
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.getUnicode = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.setUnicode = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -2831,7 +2912,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.webfontsdk.GetMultGlyfsUnicodeRequest.repeatedFields_ = [2];
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.repeatedFields_ = [3];
 
 
 
@@ -2863,7 +2944,8 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.toObject = function(opt_in
 proto.webfontsdk.GetMultGlyfsUnicodeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    unicodeList: jspb.Message.getRepeatedField(msg, 2)
+    fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    unicodeList: jspb.Message.getRepeatedField(msg, 3)
   };
 
   if (includeInstance) {
@@ -2905,6 +2987,10 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.deserializeBinaryFromReader = functi
       msg.setApikey(value);
       break;
     case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFontId(value);
+      break;
+    case 3:
       var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
       msg.setUnicodeList(value);
       break;
@@ -2944,10 +3030,17 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.serializeBinaryToWriter = function(m
       f
     );
   }
+  f = message.getFontId();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
   f = message.getUnicodeList();
   if (f.length > 0) {
     writer.writePackedUint32(
-      2,
+      3,
       f
     );
   }
@@ -2970,17 +3063,32 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setApikey = function(value
 
 
 /**
- * repeated uint32 unicode = 2;
+ * optional uint32 font_id = 2;
+ * @return {number}
+ */
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.getFontId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setFontId = function(value) {
+  jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * repeated uint32 unicode = 3;
  * @return {!Array<number>}
  */
 proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.getUnicodeList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /** @param {!Array<number>} value */
 proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setUnicodeList = function(value) {
-  jspb.Message.setField(this, 2, value || []);
+  jspb.Message.setField(this, 3, value || []);
 };
 
 
@@ -2989,7 +3097,7 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setUnicodeList = function(
  * @param {number=} opt_index
  */
 proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.addUnicode = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
