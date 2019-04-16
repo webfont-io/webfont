@@ -22,10 +22,15 @@ service Greeter {
     //rpc GetGlyfs
 }
 
-//GetProfile for html5 mod
-message GetProfile {
+//GetProfile for html5
+message GetProfileWithoutMapRequest {
     string apikey=1;
     uint32 font_id=2;
+}
+
+message GetProfileWithoutMapResult {
+    string font_id=1;
+    bytes data=2;
 }
 
 
