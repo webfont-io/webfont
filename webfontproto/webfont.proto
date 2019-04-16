@@ -21,8 +21,20 @@ service Greeter {
     //GetProfile
     rpc GetProfileWithoutMap(GetProfileWithoutMapRequest) returns (GetProfileWithoutMapResult) {}
 
-    //GetGlyfs
-    rpc GetGlyfsIndex(GetGlyfsIndexRequest) returns
+
+    //GetUnicodeIndexs
+    rpc GetUnicodeIndexs(GetUnicodeIndexsRequest) returns (GetUnicodeIndexsResult) {}
+
+    //GetGlyfs Index
+    rpc GetGlyfsIndex(GetGlyfsIndexRequest) returns (GetGlyfsIndexResult) {}
+
+
+    //GetGlyfs Unicode
+    rpc GetGlyfsUnicode(GetGlyfsUnicodeRequest) returns (GetGlyfsUnicodeResult) {}
+
+    //GetMultGlyfsUnicode
+    rpc GetMultGlyfsUnicode(GetMultGlyfsUnicodeRequest) returns (GetMultGlyfsUnicodeResult) {}
+
 }
 
 message FontListRequest {
@@ -79,6 +91,16 @@ message GetProfileWithoutMapResult {
 }
 
 
+message GetUnicodeIndexsRequest {
+    string apikey=1;
+    uint32 unicode=2;
+}
+
+message GetUnicodeIndexsResult {
+    repeated uint32 indexs=1;
+}
+
+
 message GetGlyfsIndexRequest {
     string apikey=1;
     uint32 index=2;
@@ -97,6 +119,16 @@ message GetGlyfsUnicodeRequest {
 
 
 message GetGlyfsUnicodeResult {
+    uint32 unicode=1;
+    repeated GetGlyfsIndexResult datas = 2;
+}
+
+
+message GetMultGlyfsUnicodeRequest {
     string apikey=1;
-    uint32 unicode=2;
+    repeated uint32 unicode=2;
+}
+
+message GetMultGlyfsUnicodeResult {
+    repeated GetGlyfsUnicodeResult items=1;
 }
