@@ -22,7 +22,7 @@ service Greeter {
     rpc GetProfileWithoutMap(GetProfileWithoutMapRequest) returns (GetProfileWithoutMapResult) {}
 
     //GetGlyfs
-    //rpc GetGlyfs()
+    rpc GetGlyfsIndex(GetGlyfsIndexRequest) returns
 }
 
 message FontListRequest {
@@ -76,4 +76,27 @@ message GetProfileWithoutMapRequest {
 message GetProfileWithoutMapResult {
     string font_id=1;
     bytes data=2;
+}
+
+
+message GetGlyfsIndexRequest {
+    string apikey=1;
+    uint32 index=2;
+}
+
+message GetGlyfsIndexResult {
+    uint32 index=1;
+    bytes data=2;
+}
+
+
+message GetGlyfsUnicodeRequest {
+    string apikey=1;
+    uint32 unicode=2;
+}
+
+
+message GetGlyfsUnicodeResult {
+    string apikey=1;
+    uint32 unicode=2;
 }
