@@ -20,8 +20,14 @@ service Greeter {
 
     //GetProfile
     //rpc GetGlyfs
-  }
-  
+}
+
+//GetProfile for html5 mod
+message GetProfile {
+    string apikey=1;
+    uint32 font_id=2;
+}
+
 
 message FontListRequest {
     string apikey=1;
@@ -29,16 +35,14 @@ message FontListRequest {
 
 
 message FontListResult {
-    //uint32 font_id = 1;
-    //uint64 express = 2;
     map<uint32, int64> fonts = 1;
 }
 
 
 message FontBuildRequest {
-    uint32 font_id=1;
-    string text=2;
-    string apikey=3;
+    string apikey=1;
+    uint32 font_id=2;
+    string text=3;
     bool need_ttf=4;
     bool need_eot=5;
     bool need_woff=6;
