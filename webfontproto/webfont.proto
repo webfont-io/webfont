@@ -86,7 +86,7 @@ message GetProfileWithoutMapRequest {
 }
 
 message GetProfileWithoutMapResult {
-    string font_id=1;
+    uint32 font_id=1;
     bytes data=2;
 }
 

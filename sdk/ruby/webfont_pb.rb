@@ -40,7 +40,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :font_id, :uint32, 2
   end
   add_message "webfontsdk.GetProfileWithoutMapResult" do
-    optional :font_id, :string, 1
+    optional :font_id, :uint32, 1
     optional :data, :bytes, 2
   end
   add_message "webfontsdk.GetUnicodeIndexsRequest" do

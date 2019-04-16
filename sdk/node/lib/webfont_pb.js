@@ -1604,7 +1604,7 @@ proto.webfontsdk.GetProfileWithoutMapResult.prototype.toObject = function(opt_in
  */
 proto.webfontsdk.GetProfileWithoutMapResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fontId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    fontId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     data: msg.getData_asB64()
   };
 
@@ -1643,7 +1643,7 @@ proto.webfontsdk.GetProfileWithoutMapResult.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setFontId(value);
       break;
     case 2:
@@ -1680,8 +1680,8 @@ proto.webfontsdk.GetProfileWithoutMapResult.prototype.serializeBinary = function
 proto.webfontsdk.GetProfileWithoutMapResult.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFontId();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0) {
+    writer.writeUint32(
       1,
       f
     );
@@ -1697,17 +1697,17 @@ proto.webfontsdk.GetProfileWithoutMapResult.serializeBinaryToWriter = function(m
 
 
 /**
- * optional string font_id = 1;
- * @return {string}
+ * optional uint32 font_id = 1;
+ * @return {number}
  */
 proto.webfontsdk.GetProfileWithoutMapResult.prototype.getFontId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {string} value */
+/** @param {number} value */
 proto.webfontsdk.GetProfileWithoutMapResult.prototype.setFontId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
