@@ -19,20 +19,11 @@ service Greeter {
     rpc FontList(FontListRequest) returns (FontListResult){}
 
     //GetProfile
-    //rpc GetGlyfs
-}
+    rpc GetProfileWithoutMap(GetProfileWithoutMapRequest) returns (GetProfileWithoutMapResult) {}
 
-//GetProfile for html5
-message GetProfileWithoutMapRequest {
-    string apikey=1;
-    uint32 font_id=2;
+    //GetGlyfs
+    //rpc GetGlyfs()
 }
-
-message GetProfileWithoutMapResult {
-    string font_id=1;
-    bytes data=2;
-}
-
 
 message FontListRequest {
     string apikey=1;
@@ -73,4 +64,16 @@ message FontBuildBufResult {
 
 message MultFontBuildBufResult {
     repeated FontBuildBufResult items = 1;
+}
+
+
+//GetProfile for html5
+message GetProfileWithoutMapRequest {
+    string apikey=1;
+    uint32 font_id=2;
+}
+
+message GetProfileWithoutMapResult {
+    string font_id=1;
+    bytes data=2;
 }
