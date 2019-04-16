@@ -17,7 +17,9 @@ service Greeter {
 
     //Get my fontlist
     rpc FontList(FontListRequest) returns (FontListResult){}
-    
+
+    //GetProfile
+    //rpc GetGlyfs
   }
   
 
@@ -40,6 +42,7 @@ message FontBuildRequest {
     bool need_ttf=4;
     bool need_eot=5;
     bool need_woff=6;
+    bool need_woff2=7;
 }
 
 
@@ -56,6 +59,7 @@ message FontBuildBufResult {
     bytes bytes_ttf=5;
     bytes bytes_eot=6;
     bytes bytes_woff=7;
+    bytes bytes_woff2=8;
 }
 
 message MultFontBuildBufResult {
