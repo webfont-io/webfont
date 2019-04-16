@@ -29,6 +29,31 @@ class GreeterStub(object):
         request_serializer=webfont__pb2.FontListRequest.SerializeToString,
         response_deserializer=webfont__pb2.FontListResult.FromString,
         )
+    self.GetProfileWithoutMap = channel.unary_unary(
+        '/webfontsdk.Greeter/GetProfileWithoutMap',
+        request_serializer=webfont__pb2.GetProfileWithoutMapRequest.SerializeToString,
+        response_deserializer=webfont__pb2.GetProfileWithoutMapResult.FromString,
+        )
+    self.GetUnicodeIndexs = channel.unary_unary(
+        '/webfontsdk.Greeter/GetUnicodeIndexs',
+        request_serializer=webfont__pb2.GetUnicodeIndexsRequest.SerializeToString,
+        response_deserializer=webfont__pb2.GetUnicodeIndexsResult.FromString,
+        )
+    self.GetGlyfsIndex = channel.unary_unary(
+        '/webfontsdk.Greeter/GetGlyfsIndex',
+        request_serializer=webfont__pb2.GetGlyfsIndexRequest.SerializeToString,
+        response_deserializer=webfont__pb2.GetGlyfsIndexResult.FromString,
+        )
+    self.GetGlyfsUnicode = channel.unary_unary(
+        '/webfontsdk.Greeter/GetGlyfsUnicode',
+        request_serializer=webfont__pb2.GetGlyfsUnicodeRequest.SerializeToString,
+        response_deserializer=webfont__pb2.GetGlyfsUnicodeResult.FromString,
+        )
+    self.GetMultGlyfsUnicode = channel.unary_unary(
+        '/webfontsdk.Greeter/GetMultGlyfsUnicode',
+        request_serializer=webfont__pb2.GetMultGlyfsUnicodeRequest.SerializeToString,
+        response_deserializer=webfont__pb2.GetMultGlyfsUnicodeResult.FromString,
+        )
 
 
 class GreeterServicer(object):
@@ -56,6 +81,41 @@ class GreeterServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetProfileWithoutMap(self, request, context):
+    """GetProfile
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetUnicodeIndexs(self, request, context):
+    """GetUnicodeIndexs
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetGlyfsIndex(self, request, context):
+    """GetGlyfs Index
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetGlyfsUnicode(self, request, context):
+    """GetGlyfs Unicode
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetMultGlyfsUnicode(self, request, context):
+    """GetMultGlyfsUnicode
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_GreeterServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -73,6 +133,31 @@ def add_GreeterServicer_to_server(servicer, server):
           servicer.FontList,
           request_deserializer=webfont__pb2.FontListRequest.FromString,
           response_serializer=webfont__pb2.FontListResult.SerializeToString,
+      ),
+      'GetProfileWithoutMap': grpc.unary_unary_rpc_method_handler(
+          servicer.GetProfileWithoutMap,
+          request_deserializer=webfont__pb2.GetProfileWithoutMapRequest.FromString,
+          response_serializer=webfont__pb2.GetProfileWithoutMapResult.SerializeToString,
+      ),
+      'GetUnicodeIndexs': grpc.unary_unary_rpc_method_handler(
+          servicer.GetUnicodeIndexs,
+          request_deserializer=webfont__pb2.GetUnicodeIndexsRequest.FromString,
+          response_serializer=webfont__pb2.GetUnicodeIndexsResult.SerializeToString,
+      ),
+      'GetGlyfsIndex': grpc.unary_unary_rpc_method_handler(
+          servicer.GetGlyfsIndex,
+          request_deserializer=webfont__pb2.GetGlyfsIndexRequest.FromString,
+          response_serializer=webfont__pb2.GetGlyfsIndexResult.SerializeToString,
+      ),
+      'GetGlyfsUnicode': grpc.unary_unary_rpc_method_handler(
+          servicer.GetGlyfsUnicode,
+          request_deserializer=webfont__pb2.GetGlyfsUnicodeRequest.FromString,
+          response_serializer=webfont__pb2.GetGlyfsUnicodeResult.SerializeToString,
+      ),
+      'GetMultGlyfsUnicode': grpc.unary_unary_rpc_method_handler(
+          servicer.GetMultGlyfsUnicode,
+          request_deserializer=webfont__pb2.GetMultGlyfsUnicodeRequest.FromString,
+          response_serializer=webfont__pb2.GetMultGlyfsUnicodeResult.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

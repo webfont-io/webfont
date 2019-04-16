@@ -21,6 +21,16 @@ module Webfontsdk
       rpc :MultBuildFont, MultFontBuildRequest, MultFontBuildBufResult
       # Get my fontlist
       rpc :FontList, FontListRequest, FontListResult
+      # GetProfile
+      rpc :GetProfileWithoutMap, GetProfileWithoutMapRequest, GetProfileWithoutMapResult
+      # GetUnicodeIndexs
+      rpc :GetUnicodeIndexs, GetUnicodeIndexsRequest, GetUnicodeIndexsResult
+      # GetGlyfs Index
+      rpc :GetGlyfsIndex, GetGlyfsIndexRequest, GetGlyfsIndexResult
+      # GetGlyfs Unicode
+      rpc :GetGlyfsUnicode, GetGlyfsUnicodeRequest, GetGlyfsUnicodeResult
+      # GetMultGlyfsUnicode
+      rpc :GetMultGlyfsUnicode, GetMultGlyfsUnicodeRequest, GetMultGlyfsUnicodeResult
     end
 
     Stub = Service.rpc_stub_class

@@ -62,8 +62,6 @@ func (m *FontListRequest) GetApikey() string {
 }
 
 type FontListResult struct {
-	//uint32 font_id = 1;
-	//uint64 express = 2;
 	Fonts                map[uint32]int64 `protobuf:"bytes,1,rep,name=fonts,proto3" json:"fonts,omitempty" bson:"fonts,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}         `json:"-" bson:"-"`
 	XXX_unrecognized     []byte           `json:"-" bson:"-"`
@@ -103,12 +101,13 @@ func (m *FontListResult) GetFonts() map[uint32]int64 {
 }
 
 type FontBuildRequest struct {
-	FontId               uint32   `protobuf:"varint,1,opt,name=font_id,json=fontId,proto3" json:"font_id,omitempty" bson:"font_id,omitempty"`
-	Text                 string   `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty" bson:"text,omitempty"`
-	Apikey               string   `protobuf:"bytes,3,opt,name=apikey,proto3" json:"apikey,omitempty" bson:"apikey,omitempty"`
+	Apikey               string   `protobuf:"bytes,1,opt,name=apikey,proto3" json:"apikey,omitempty" bson:"apikey,omitempty"`
+	FontId               uint32   `protobuf:"varint,2,opt,name=font_id,json=fontId,proto3" json:"font_id,omitempty" bson:"font_id,omitempty"`
+	Text                 string   `protobuf:"bytes,3,opt,name=text,proto3" json:"text,omitempty" bson:"text,omitempty"`
 	NeedTtf              bool     `protobuf:"varint,4,opt,name=need_ttf,json=needTtf,proto3" json:"need_ttf,omitempty" bson:"need_ttf,omitempty"`
 	NeedEot              bool     `protobuf:"varint,5,opt,name=need_eot,json=needEot,proto3" json:"need_eot,omitempty" bson:"need_eot,omitempty"`
 	NeedWoff             bool     `protobuf:"varint,6,opt,name=need_woff,json=needWoff,proto3" json:"need_woff,omitempty" bson:"need_woff,omitempty"`
+	NeedWoff2            bool     `protobuf:"varint,7,opt,name=need_woff2,json=needWoff2,proto3" json:"need_woff2,omitempty" bson:"need_woff2,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
 	XXX_unrecognized     []byte   `json:"-" bson:"-"`
 	XXX_sizecache        int32    `json:"-" bson:"-"`
@@ -139,6 +138,13 @@ func (m *FontBuildRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_FontBuildRequest proto.InternalMessageInfo
 
+func (m *FontBuildRequest) GetApikey() string {
+	if m != nil {
+		return m.Apikey
+	}
+	return ""
+}
+
 func (m *FontBuildRequest) GetFontId() uint32 {
 	if m != nil {
 		return m.FontId
@@ -149,13 +155,6 @@ func (m *FontBuildRequest) GetFontId() uint32 {
 func (m *FontBuildRequest) GetText() string {
 	if m != nil {
 		return m.Text
-	}
-	return ""
-}
-
-func (m *FontBuildRequest) GetApikey() string {
-	if m != nil {
-		return m.Apikey
 	}
 	return ""
 }
@@ -177,6 +176,13 @@ func (m *FontBuildRequest) GetNeedEot() bool {
 func (m *FontBuildRequest) GetNeedWoff() bool {
 	if m != nil {
 		return m.NeedWoff
+	}
+	return false
+}
+
+func (m *FontBuildRequest) GetNeedWoff2() bool {
+	if m != nil {
+		return m.NeedWoff2
 	}
 	return false
 }
@@ -228,6 +234,7 @@ type FontBuildBufResult struct {
 	BytesTtf             []byte   `protobuf:"bytes,5,opt,name=bytes_ttf,json=bytesTtf,proto3" json:"bytes_ttf,omitempty" bson:"bytes_ttf,omitempty"`
 	BytesEot             []byte   `protobuf:"bytes,6,opt,name=bytes_eot,json=bytesEot,proto3" json:"bytes_eot,omitempty" bson:"bytes_eot,omitempty"`
 	BytesWoff            []byte   `protobuf:"bytes,7,opt,name=bytes_woff,json=bytesWoff,proto3" json:"bytes_woff,omitempty" bson:"bytes_woff,omitempty"`
+	BytesWoff2           []byte   `protobuf:"bytes,8,opt,name=bytes_woff2,json=bytesWoff2,proto3" json:"bytes_woff2,omitempty" bson:"bytes_woff2,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
 	XXX_unrecognized     []byte   `json:"-" bson:"-"`
 	XXX_sizecache        int32    `json:"-" bson:"-"`
@@ -307,6 +314,13 @@ func (m *FontBuildBufResult) GetBytesWoff() []byte {
 	return nil
 }
 
+func (m *FontBuildBufResult) GetBytesWoff2() []byte {
+	if m != nil {
+		return m.BytesWoff2
+	}
+	return nil
+}
+
 type MultFontBuildBufResult struct {
 	Items                []*FontBuildBufResult `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}              `json:"-" bson:"-"`
@@ -346,6 +360,461 @@ func (m *MultFontBuildBufResult) GetItems() []*FontBuildBufResult {
 	return nil
 }
 
+//GetProfile for html5
+type GetProfileWithoutMapRequest struct {
+	Apikey               string   `protobuf:"bytes,1,opt,name=apikey,proto3" json:"apikey,omitempty" bson:"apikey,omitempty"`
+	FontId               uint32   `protobuf:"varint,2,opt,name=font_id,json=fontId,proto3" json:"font_id,omitempty" bson:"font_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
+}
+
+func (m *GetProfileWithoutMapRequest) Reset()         { *m = GetProfileWithoutMapRequest{} }
+func (m *GetProfileWithoutMapRequest) String() string { return proto.CompactTextString(m) }
+func (*GetProfileWithoutMapRequest) ProtoMessage()    {}
+func (*GetProfileWithoutMapRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{6}
+}
+
+func (m *GetProfileWithoutMapRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetProfileWithoutMapRequest.Unmarshal(m, b)
+}
+func (m *GetProfileWithoutMapRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetProfileWithoutMapRequest.Marshal(b, m, deterministic)
+}
+func (m *GetProfileWithoutMapRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetProfileWithoutMapRequest.Merge(m, src)
+}
+func (m *GetProfileWithoutMapRequest) XXX_Size() int {
+	return xxx_messageInfo_GetProfileWithoutMapRequest.Size(m)
+}
+func (m *GetProfileWithoutMapRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetProfileWithoutMapRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetProfileWithoutMapRequest proto.InternalMessageInfo
+
+func (m *GetProfileWithoutMapRequest) GetApikey() string {
+	if m != nil {
+		return m.Apikey
+	}
+	return ""
+}
+
+func (m *GetProfileWithoutMapRequest) GetFontId() uint32 {
+	if m != nil {
+		return m.FontId
+	}
+	return 0
+}
+
+type GetProfileWithoutMapResult struct {
+	FontId               string   `protobuf:"bytes,1,opt,name=font_id,json=fontId,proto3" json:"font_id,omitempty" bson:"font_id,omitempty"`
+	Data                 []byte   `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty" bson:"data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
+}
+
+func (m *GetProfileWithoutMapResult) Reset()         { *m = GetProfileWithoutMapResult{} }
+func (m *GetProfileWithoutMapResult) String() string { return proto.CompactTextString(m) }
+func (*GetProfileWithoutMapResult) ProtoMessage()    {}
+func (*GetProfileWithoutMapResult) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{7}
+}
+
+func (m *GetProfileWithoutMapResult) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetProfileWithoutMapResult.Unmarshal(m, b)
+}
+func (m *GetProfileWithoutMapResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetProfileWithoutMapResult.Marshal(b, m, deterministic)
+}
+func (m *GetProfileWithoutMapResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetProfileWithoutMapResult.Merge(m, src)
+}
+func (m *GetProfileWithoutMapResult) XXX_Size() int {
+	return xxx_messageInfo_GetProfileWithoutMapResult.Size(m)
+}
+func (m *GetProfileWithoutMapResult) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetProfileWithoutMapResult.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetProfileWithoutMapResult proto.InternalMessageInfo
+
+func (m *GetProfileWithoutMapResult) GetFontId() string {
+	if m != nil {
+		return m.FontId
+	}
+	return ""
+}
+
+func (m *GetProfileWithoutMapResult) GetData() []byte {
+	if m != nil {
+		return m.Data
+	}
+	return nil
+}
+
+type GetUnicodeIndexsRequest struct {
+	Apikey               string   `protobuf:"bytes,1,opt,name=apikey,proto3" json:"apikey,omitempty" bson:"apikey,omitempty"`
+	Unicode              uint32   `protobuf:"varint,2,opt,name=unicode,proto3" json:"unicode,omitempty" bson:"unicode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
+}
+
+func (m *GetUnicodeIndexsRequest) Reset()         { *m = GetUnicodeIndexsRequest{} }
+func (m *GetUnicodeIndexsRequest) String() string { return proto.CompactTextString(m) }
+func (*GetUnicodeIndexsRequest) ProtoMessage()    {}
+func (*GetUnicodeIndexsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{8}
+}
+
+func (m *GetUnicodeIndexsRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetUnicodeIndexsRequest.Unmarshal(m, b)
+}
+func (m *GetUnicodeIndexsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetUnicodeIndexsRequest.Marshal(b, m, deterministic)
+}
+func (m *GetUnicodeIndexsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetUnicodeIndexsRequest.Merge(m, src)
+}
+func (m *GetUnicodeIndexsRequest) XXX_Size() int {
+	return xxx_messageInfo_GetUnicodeIndexsRequest.Size(m)
+}
+func (m *GetUnicodeIndexsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetUnicodeIndexsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetUnicodeIndexsRequest proto.InternalMessageInfo
+
+func (m *GetUnicodeIndexsRequest) GetApikey() string {
+	if m != nil {
+		return m.Apikey
+	}
+	return ""
+}
+
+func (m *GetUnicodeIndexsRequest) GetUnicode() uint32 {
+	if m != nil {
+		return m.Unicode
+	}
+	return 0
+}
+
+type GetUnicodeIndexsResult struct {
+	Indexs               []uint32 `protobuf:"varint,1,rep,packed,name=indexs,proto3" json:"indexs,omitempty" bson:"indexs,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
+}
+
+func (m *GetUnicodeIndexsResult) Reset()         { *m = GetUnicodeIndexsResult{} }
+func (m *GetUnicodeIndexsResult) String() string { return proto.CompactTextString(m) }
+func (*GetUnicodeIndexsResult) ProtoMessage()    {}
+func (*GetUnicodeIndexsResult) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{9}
+}
+
+func (m *GetUnicodeIndexsResult) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetUnicodeIndexsResult.Unmarshal(m, b)
+}
+func (m *GetUnicodeIndexsResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetUnicodeIndexsResult.Marshal(b, m, deterministic)
+}
+func (m *GetUnicodeIndexsResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetUnicodeIndexsResult.Merge(m, src)
+}
+func (m *GetUnicodeIndexsResult) XXX_Size() int {
+	return xxx_messageInfo_GetUnicodeIndexsResult.Size(m)
+}
+func (m *GetUnicodeIndexsResult) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetUnicodeIndexsResult.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetUnicodeIndexsResult proto.InternalMessageInfo
+
+func (m *GetUnicodeIndexsResult) GetIndexs() []uint32 {
+	if m != nil {
+		return m.Indexs
+	}
+	return nil
+}
+
+type GetGlyfsIndexRequest struct {
+	Apikey               string   `protobuf:"bytes,1,opt,name=apikey,proto3" json:"apikey,omitempty" bson:"apikey,omitempty"`
+	Index                uint32   `protobuf:"varint,2,opt,name=index,proto3" json:"index,omitempty" bson:"index,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
+}
+
+func (m *GetGlyfsIndexRequest) Reset()         { *m = GetGlyfsIndexRequest{} }
+func (m *GetGlyfsIndexRequest) String() string { return proto.CompactTextString(m) }
+func (*GetGlyfsIndexRequest) ProtoMessage()    {}
+func (*GetGlyfsIndexRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{10}
+}
+
+func (m *GetGlyfsIndexRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetGlyfsIndexRequest.Unmarshal(m, b)
+}
+func (m *GetGlyfsIndexRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetGlyfsIndexRequest.Marshal(b, m, deterministic)
+}
+func (m *GetGlyfsIndexRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetGlyfsIndexRequest.Merge(m, src)
+}
+func (m *GetGlyfsIndexRequest) XXX_Size() int {
+	return xxx_messageInfo_GetGlyfsIndexRequest.Size(m)
+}
+func (m *GetGlyfsIndexRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetGlyfsIndexRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetGlyfsIndexRequest proto.InternalMessageInfo
+
+func (m *GetGlyfsIndexRequest) GetApikey() string {
+	if m != nil {
+		return m.Apikey
+	}
+	return ""
+}
+
+func (m *GetGlyfsIndexRequest) GetIndex() uint32 {
+	if m != nil {
+		return m.Index
+	}
+	return 0
+}
+
+type GetGlyfsIndexResult struct {
+	Index                uint32   `protobuf:"varint,1,opt,name=index,proto3" json:"index,omitempty" bson:"index,omitempty"`
+	Data                 []byte   `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty" bson:"data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
+}
+
+func (m *GetGlyfsIndexResult) Reset()         { *m = GetGlyfsIndexResult{} }
+func (m *GetGlyfsIndexResult) String() string { return proto.CompactTextString(m) }
+func (*GetGlyfsIndexResult) ProtoMessage()    {}
+func (*GetGlyfsIndexResult) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{11}
+}
+
+func (m *GetGlyfsIndexResult) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetGlyfsIndexResult.Unmarshal(m, b)
+}
+func (m *GetGlyfsIndexResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetGlyfsIndexResult.Marshal(b, m, deterministic)
+}
+func (m *GetGlyfsIndexResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetGlyfsIndexResult.Merge(m, src)
+}
+func (m *GetGlyfsIndexResult) XXX_Size() int {
+	return xxx_messageInfo_GetGlyfsIndexResult.Size(m)
+}
+func (m *GetGlyfsIndexResult) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetGlyfsIndexResult.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetGlyfsIndexResult proto.InternalMessageInfo
+
+func (m *GetGlyfsIndexResult) GetIndex() uint32 {
+	if m != nil {
+		return m.Index
+	}
+	return 0
+}
+
+func (m *GetGlyfsIndexResult) GetData() []byte {
+	if m != nil {
+		return m.Data
+	}
+	return nil
+}
+
+type GetGlyfsUnicodeRequest struct {
+	Apikey               string   `protobuf:"bytes,1,opt,name=apikey,proto3" json:"apikey,omitempty" bson:"apikey,omitempty"`
+	Unicode              uint32   `protobuf:"varint,2,opt,name=unicode,proto3" json:"unicode,omitempty" bson:"unicode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
+}
+
+func (m *GetGlyfsUnicodeRequest) Reset()         { *m = GetGlyfsUnicodeRequest{} }
+func (m *GetGlyfsUnicodeRequest) String() string { return proto.CompactTextString(m) }
+func (*GetGlyfsUnicodeRequest) ProtoMessage()    {}
+func (*GetGlyfsUnicodeRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{12}
+}
+
+func (m *GetGlyfsUnicodeRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetGlyfsUnicodeRequest.Unmarshal(m, b)
+}
+func (m *GetGlyfsUnicodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetGlyfsUnicodeRequest.Marshal(b, m, deterministic)
+}
+func (m *GetGlyfsUnicodeRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetGlyfsUnicodeRequest.Merge(m, src)
+}
+func (m *GetGlyfsUnicodeRequest) XXX_Size() int {
+	return xxx_messageInfo_GetGlyfsUnicodeRequest.Size(m)
+}
+func (m *GetGlyfsUnicodeRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetGlyfsUnicodeRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetGlyfsUnicodeRequest proto.InternalMessageInfo
+
+func (m *GetGlyfsUnicodeRequest) GetApikey() string {
+	if m != nil {
+		return m.Apikey
+	}
+	return ""
+}
+
+func (m *GetGlyfsUnicodeRequest) GetUnicode() uint32 {
+	if m != nil {
+		return m.Unicode
+	}
+	return 0
+}
+
+type GetGlyfsUnicodeResult struct {
+	Unicode              uint32                 `protobuf:"varint,1,opt,name=unicode,proto3" json:"unicode,omitempty" bson:"unicode,omitempty"`
+	Datas                []*GetGlyfsIndexResult `protobuf:"bytes,2,rep,name=datas,proto3" json:"datas,omitempty" bson:"datas,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}               `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                 `json:"-" bson:"-"`
+	XXX_sizecache        int32                  `json:"-" bson:"-"`
+}
+
+func (m *GetGlyfsUnicodeResult) Reset()         { *m = GetGlyfsUnicodeResult{} }
+func (m *GetGlyfsUnicodeResult) String() string { return proto.CompactTextString(m) }
+func (*GetGlyfsUnicodeResult) ProtoMessage()    {}
+func (*GetGlyfsUnicodeResult) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{13}
+}
+
+func (m *GetGlyfsUnicodeResult) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetGlyfsUnicodeResult.Unmarshal(m, b)
+}
+func (m *GetGlyfsUnicodeResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetGlyfsUnicodeResult.Marshal(b, m, deterministic)
+}
+func (m *GetGlyfsUnicodeResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetGlyfsUnicodeResult.Merge(m, src)
+}
+func (m *GetGlyfsUnicodeResult) XXX_Size() int {
+	return xxx_messageInfo_GetGlyfsUnicodeResult.Size(m)
+}
+func (m *GetGlyfsUnicodeResult) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetGlyfsUnicodeResult.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetGlyfsUnicodeResult proto.InternalMessageInfo
+
+func (m *GetGlyfsUnicodeResult) GetUnicode() uint32 {
+	if m != nil {
+		return m.Unicode
+	}
+	return 0
+}
+
+func (m *GetGlyfsUnicodeResult) GetDatas() []*GetGlyfsIndexResult {
+	if m != nil {
+		return m.Datas
+	}
+	return nil
+}
+
+type GetMultGlyfsUnicodeRequest struct {
+	Apikey               string   `protobuf:"bytes,1,opt,name=apikey,proto3" json:"apikey,omitempty" bson:"apikey,omitempty"`
+	Unicode              []uint32 `protobuf:"varint,2,rep,packed,name=unicode,proto3" json:"unicode,omitempty" bson:"unicode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-" bson:"-"`
+	XXX_unrecognized     []byte   `json:"-" bson:"-"`
+	XXX_sizecache        int32    `json:"-" bson:"-"`
+}
+
+func (m *GetMultGlyfsUnicodeRequest) Reset()         { *m = GetMultGlyfsUnicodeRequest{} }
+func (m *GetMultGlyfsUnicodeRequest) String() string { return proto.CompactTextString(m) }
+func (*GetMultGlyfsUnicodeRequest) ProtoMessage()    {}
+func (*GetMultGlyfsUnicodeRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{14}
+}
+
+func (m *GetMultGlyfsUnicodeRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetMultGlyfsUnicodeRequest.Unmarshal(m, b)
+}
+func (m *GetMultGlyfsUnicodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetMultGlyfsUnicodeRequest.Marshal(b, m, deterministic)
+}
+func (m *GetMultGlyfsUnicodeRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetMultGlyfsUnicodeRequest.Merge(m, src)
+}
+func (m *GetMultGlyfsUnicodeRequest) XXX_Size() int {
+	return xxx_messageInfo_GetMultGlyfsUnicodeRequest.Size(m)
+}
+func (m *GetMultGlyfsUnicodeRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetMultGlyfsUnicodeRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetMultGlyfsUnicodeRequest proto.InternalMessageInfo
+
+func (m *GetMultGlyfsUnicodeRequest) GetApikey() string {
+	if m != nil {
+		return m.Apikey
+	}
+	return ""
+}
+
+func (m *GetMultGlyfsUnicodeRequest) GetUnicode() []uint32 {
+	if m != nil {
+		return m.Unicode
+	}
+	return nil
+}
+
+type GetMultGlyfsUnicodeResult struct {
+	Items                []*GetGlyfsUnicodeResult `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                 `json:"-" bson:"-"`
+	XXX_unrecognized     []byte                   `json:"-" bson:"-"`
+	XXX_sizecache        int32                    `json:"-" bson:"-"`
+}
+
+func (m *GetMultGlyfsUnicodeResult) Reset()         { *m = GetMultGlyfsUnicodeResult{} }
+func (m *GetMultGlyfsUnicodeResult) String() string { return proto.CompactTextString(m) }
+func (*GetMultGlyfsUnicodeResult) ProtoMessage()    {}
+func (*GetMultGlyfsUnicodeResult) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e04e5ea2200a7886, []int{15}
+}
+
+func (m *GetMultGlyfsUnicodeResult) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetMultGlyfsUnicodeResult.Unmarshal(m, b)
+}
+func (m *GetMultGlyfsUnicodeResult) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetMultGlyfsUnicodeResult.Marshal(b, m, deterministic)
+}
+func (m *GetMultGlyfsUnicodeResult) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetMultGlyfsUnicodeResult.Merge(m, src)
+}
+func (m *GetMultGlyfsUnicodeResult) XXX_Size() int {
+	return xxx_messageInfo_GetMultGlyfsUnicodeResult.Size(m)
+}
+func (m *GetMultGlyfsUnicodeResult) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetMultGlyfsUnicodeResult.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetMultGlyfsUnicodeResult proto.InternalMessageInfo
+
+func (m *GetMultGlyfsUnicodeResult) GetItems() []*GetGlyfsUnicodeResult {
+	if m != nil {
+		return m.Items
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*FontListRequest)(nil), "webfontsdk.FontListRequest")
 	proto.RegisterType((*FontListResult)(nil), "webfontsdk.FontListResult")
@@ -354,44 +823,73 @@ func init() {
 	proto.RegisterType((*MultFontBuildRequest)(nil), "webfontsdk.MultFontBuildRequest")
 	proto.RegisterType((*FontBuildBufResult)(nil), "webfontsdk.FontBuildBufResult")
 	proto.RegisterType((*MultFontBuildBufResult)(nil), "webfontsdk.MultFontBuildBufResult")
+	proto.RegisterType((*GetProfileWithoutMapRequest)(nil), "webfontsdk.GetProfileWithoutMapRequest")
+	proto.RegisterType((*GetProfileWithoutMapResult)(nil), "webfontsdk.GetProfileWithoutMapResult")
+	proto.RegisterType((*GetUnicodeIndexsRequest)(nil), "webfontsdk.GetUnicodeIndexsRequest")
+	proto.RegisterType((*GetUnicodeIndexsResult)(nil), "webfontsdk.GetUnicodeIndexsResult")
+	proto.RegisterType((*GetGlyfsIndexRequest)(nil), "webfontsdk.GetGlyfsIndexRequest")
+	proto.RegisterType((*GetGlyfsIndexResult)(nil), "webfontsdk.GetGlyfsIndexResult")
+	proto.RegisterType((*GetGlyfsUnicodeRequest)(nil), "webfontsdk.GetGlyfsUnicodeRequest")
+	proto.RegisterType((*GetGlyfsUnicodeResult)(nil), "webfontsdk.GetGlyfsUnicodeResult")
+	proto.RegisterType((*GetMultGlyfsUnicodeRequest)(nil), "webfontsdk.GetMultGlyfsUnicodeRequest")
+	proto.RegisterType((*GetMultGlyfsUnicodeResult)(nil), "webfontsdk.GetMultGlyfsUnicodeResult")
 }
 
 func init() { proto.RegisterFile("webfont.proto", fileDescriptor_e04e5ea2200a7886) }
 
 var fileDescriptor_e04e5ea2200a7886 = []byte{
-	// 508 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x94, 0xdf, 0x8e, 0xd2, 0x40,
-	0x14, 0xc6, 0x77, 0x96, 0xa5, 0xd0, 0x23, 0xd5, 0x75, 0x76, 0xb3, 0x56, 0x56, 0x4d, 0x53, 0xb3,
-	0x09, 0xde, 0xf4, 0x02, 0xbd, 0xd8, 0xe8, 0x1d, 0x86, 0x35, 0xfe, 0xcd, 0x66, 0x62, 0xe4, 0x92,
-	0x00, 0x9d, 0xd1, 0x06, 0xe8, 0x60, 0x7b, 0xba, 0xc8, 0x13, 0xf8, 0x2e, 0x3e, 0x9f, 0xf1, 0xda,
-	0xcc, 0x69, 0xa1, 0x45, 0x41, 0xef, 0xe6, 0x9c, 0xef, 0x9b, 0xaf, 0x73, 0x7e, 0xed, 0x14, 0x9c,
-	0xa5, 0x1c, 0x2b, 0x1d, 0x63, 0xb0, 0x48, 0x34, 0x6a, 0x0e, 0x45, 0x99, 0x86, 0x53, 0xff, 0x09,
-	0xdc, 0xb9, 0xd2, 0x31, 0xbe, 0x8b, 0x52, 0x14, 0xf2, 0x6b, 0x26, 0x53, 0xe4, 0x67, 0x60, 0x8d,
-	0x16, 0xd1, 0x54, 0xae, 0x5c, 0xe6, 0xb1, 0x8e, 0x2d, 0x8a, 0xca, 0xff, 0xce, 0xe0, 0x76, 0xe9,
-	0x4d, 0xb3, 0x19, 0xf2, 0x17, 0x50, 0xa7, 0x20, 0x97, 0x79, 0xb5, 0xce, 0xad, 0xee, 0x45, 0x50,
-	0x26, 0x07, 0xdb, 0x56, 0x2a, 0xd3, 0x7e, 0x8c, 0xc9, 0x4a, 0xe4, 0x7b, 0xda, 0x97, 0x00, 0x65,
-	0x93, 0x1f, 0x43, 0x6d, 0xfd, 0x48, 0x47, 0x98, 0x25, 0x3f, 0x85, 0xfa, 0xcd, 0x68, 0x96, 0x49,
-	0xf7, 0xd0, 0x63, 0x9d, 0x9a, 0xc8, 0x8b, 0xe7, 0x87, 0x97, 0xcc, 0xff, 0xc1, 0xe0, 0xd8, 0x6c,
-	0xed, 0x65, 0xd1, 0x2c, 0x5c, 0x1f, 0xfb, 0x1e, 0x34, 0x4c, 0xee, 0x30, 0x0a, 0x8b, 0x10, 0xcb,
-	0x94, 0xaf, 0x43, 0xce, 0xe1, 0x08, 0xe5, 0x37, 0xa4, 0x18, 0x5b, 0xd0, 0xba, 0x32, 0x63, 0xad,
-	0x3a, 0x23, 0xbf, 0x0f, 0xcd, 0x58, 0xca, 0x70, 0x88, 0xa8, 0xdc, 0x23, 0x8f, 0x75, 0x9a, 0xa2,
-	0x61, 0xea, 0x8f, 0xa8, 0x36, 0x92, 0xd4, 0xe8, 0xd6, 0x4b, 0xa9, 0xaf, 0x91, 0x9f, 0x83, 0x4d,
-	0xd2, 0x52, 0x2b, 0xe5, 0x5a, 0xa4, 0x91, 0x77, 0xa0, 0x95, 0xf2, 0xdf, 0xc0, 0xe9, 0xfb, 0x6c,
-	0x86, 0x7f, 0x9d, 0xb7, 0x0b, 0xf5, 0x08, 0xe5, 0x7c, 0xcd, 0xee, 0xc1, 0x9f, 0xec, 0xaa, 0x66,
-	0x91, 0x5b, 0xfd, 0x9f, 0x0c, 0xf8, 0x46, 0xeb, 0x65, 0xaa, 0x78, 0x0d, 0x7b, 0x47, 0x0f, 0xe0,
-	0x84, 0x04, 0xa5, 0x93, 0xf9, 0x08, 0x87, 0x37, 0x32, 0x49, 0x23, 0x1d, 0x13, 0x09, 0x47, 0xdc,
-	0x35, 0xd2, 0x15, 0x29, 0x9f, 0x72, 0x81, 0x3f, 0x06, 0x87, 0xfc, 0x93, 0x2f, 0x72, 0x32, 0x4d,
-	0xb3, 0x39, 0xd1, 0x71, 0x44, 0xcb, 0x34, 0x5f, 0x16, 0x3d, 0xf3, 0xb4, 0x78, 0x34, 0x97, 0x43,
-	0x19, 0x13, 0x22, 0x5b, 0x58, 0xa6, 0xec, 0xc7, 0x06, 0xc3, 0x78, 0x85, 0x32, 0x25, 0x7a, 0x06,
-	0x51, 0x4b, 0x34, 0xa9, 0x61, 0xf0, 0x6d, 0x44, 0xc3, 0xcf, 0xaa, 0x88, 0x06, 0xe0, 0x43, 0x80,
-	0x5c, 0x24, 0x82, 0x0d, 0x52, 0x73, 0x3b, 0x21, 0xfc, 0x00, 0x67, 0x5b, 0x08, 0xcb, 0xc9, 0x9f,
-	0x6d, 0x43, 0x7c, 0xb4, 0x13, 0xe2, 0xc6, 0x5e, 0x60, 0xec, 0xfe, 0x62, 0xd0, 0x78, 0x95, 0x48,
-	0x89, 0x32, 0xe1, 0x6f, 0xc1, 0x26, 0x93, 0x71, 0xf3, 0x7f, 0xbe, 0x84, 0xf6, 0x7f, 0xd2, 0xfd,
-	0x03, 0x3e, 0x00, 0xc7, 0x1c, 0xb4, 0x0c, 0xf4, 0xaa, 0x5b, 0x76, 0x7d, 0x06, 0x6d, 0x7f, 0xaf,
-	0xa3, 0x1a, 0xdc, 0x87, 0xe6, 0xfa, 0x3e, 0xf1, 0xf3, 0xdd, 0xb7, 0x2c, 0x8f, 0x6b, 0xef, 0xbf,
-	0x82, 0xfe, 0x41, 0xef, 0x02, 0x4e, 0x22, 0x1d, 0x7c, 0x4e, 0x16, 0x93, 0xc0, 0xe8, 0x85, 0xb5,
-	0xd7, 0x1a, 0xe4, 0x8b, 0x6b, 0xf3, 0x7b, 0xb8, 0x66, 0x63, 0x8b, 0xfe, 0x13, 0x4f, 0x7f, 0x07,
-	0x00, 0x00, 0xff, 0xff, 0x78, 0x49, 0x8d, 0x21, 0x38, 0x04, 0x00, 0x00,
+	// 814 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x56, 0xed, 0x4e, 0xdb, 0x48,
+	0x14, 0x8d, 0x13, 0xf2, 0x75, 0x89, 0x17, 0x76, 0xc8, 0x06, 0x63, 0x96, 0x25, 0x3b, 0x88, 0xdd,
+	0xec, 0x9f, 0x68, 0x95, 0xb6, 0x2a, 0x6a, 0x7f, 0x54, 0x4a, 0x1b, 0x22, 0xa0, 0x20, 0x64, 0xd1,
+	0x46, 0xaa, 0x54, 0x45, 0x21, 0x1e, 0x17, 0x8b, 0xc4, 0x4e, 0xed, 0x31, 0x90, 0x27, 0xe8, 0x13,
+	0xf4, 0xa1, 0xfa, 0x0a, 0x7d, 0x9a, 0x6a, 0xae, 0x9d, 0xc4, 0x76, 0x1c, 0x2c, 0xf1, 0xcf, 0x77,
+	0xce, 0xb9, 0x1f, 0x39, 0x39, 0x77, 0x6c, 0x90, 0xef, 0xd9, 0xb5, 0x61, 0x5b, 0xbc, 0x39, 0x71,
+	0x6c, 0x6e, 0x13, 0x08, 0x42, 0x57, 0xbf, 0xa5, 0xff, 0xc1, 0xc6, 0xb1, 0x6d, 0xf1, 0xf7, 0xa6,
+	0xcb, 0x35, 0xf6, 0xd5, 0x63, 0x2e, 0x27, 0x35, 0x28, 0x0c, 0x26, 0xe6, 0x2d, 0x9b, 0x2a, 0x52,
+	0x5d, 0x6a, 0x94, 0xb5, 0x20, 0xa2, 0xdf, 0x24, 0xf8, 0x6d, 0xc1, 0x75, 0xbd, 0x11, 0x27, 0xaf,
+	0x21, 0x8f, 0x85, 0x14, 0xa9, 0x9e, 0x6b, 0xac, 0xb7, 0x0e, 0x9b, 0x8b, 0xca, 0xcd, 0x28, 0x15,
+	0x43, 0xb7, 0x63, 0x71, 0x67, 0xaa, 0xf9, 0x39, 0xea, 0x11, 0xc0, 0xe2, 0x90, 0x6c, 0x42, 0x6e,
+	0xd6, 0x52, 0xd6, 0xc4, 0x23, 0xa9, 0x42, 0xfe, 0x6e, 0x30, 0xf2, 0x98, 0x92, 0xad, 0x4b, 0x8d,
+	0x9c, 0xe6, 0x07, 0xaf, 0xb2, 0x47, 0x12, 0xfd, 0x21, 0xc1, 0xa6, 0x48, 0x6d, 0x7b, 0xe6, 0x48,
+	0x4f, 0x19, 0x9b, 0x6c, 0x43, 0x51, 0xf4, 0xeb, 0x9b, 0x3a, 0x16, 0x92, 0xb5, 0x82, 0x08, 0x4f,
+	0x74, 0x42, 0x60, 0x8d, 0xb3, 0x07, 0xae, 0xe4, 0x90, 0x8e, 0xcf, 0x64, 0x07, 0x4a, 0x16, 0x63,
+	0x7a, 0x9f, 0x73, 0x43, 0x59, 0xab, 0x4b, 0x8d, 0x92, 0x56, 0x14, 0xf1, 0x15, 0x37, 0xe6, 0x10,
+	0xb3, 0xb9, 0x92, 0x5f, 0x40, 0x1d, 0x9b, 0x93, 0x5d, 0x28, 0x23, 0x74, 0x6f, 0x1b, 0x86, 0x52,
+	0x40, 0x0c, 0xb9, 0x3d, 0xdb, 0x30, 0xc8, 0x1e, 0xc0, 0x1c, 0x6c, 0x29, 0x45, 0x44, 0xcb, 0x33,
+	0xb4, 0x45, 0x4f, 0xa1, 0x7a, 0xee, 0x8d, 0xf8, 0xd2, 0xcf, 0x69, 0x41, 0xde, 0xe4, 0x6c, 0x3c,
+	0x93, 0xf6, 0xcf, 0xb8, 0xb4, 0x61, 0xb2, 0xe6, 0x53, 0xe9, 0xf7, 0x2c, 0x90, 0x39, 0xd6, 0xf6,
+	0x8c, 0xe0, 0x5f, 0x0a, 0x29, 0x20, 0x45, 0x14, 0x68, 0xc2, 0x16, 0x02, 0x86, 0xed, 0x8c, 0x07,
+	0xbc, 0x7f, 0xc7, 0x1c, 0xd7, 0xb4, 0xad, 0x40, 0xa6, 0xdf, 0x05, 0x74, 0x8c, 0xc8, 0x47, 0x1f,
+	0x20, 0x07, 0x20, 0x23, 0x7f, 0x78, 0xc3, 0x86, 0xb7, 0xae, 0x37, 0x46, 0xe9, 0x64, 0xad, 0x22,
+	0x0e, 0xdf, 0x06, 0x67, 0xa2, 0x9b, 0x35, 0x18, 0xb3, 0x3e, 0xb3, 0x50, 0xc1, 0xb2, 0x56, 0x10,
+	0x61, 0xc7, 0x12, 0x2a, 0x5d, 0x4f, 0x39, 0x73, 0x51, 0x5c, 0xa1, 0x60, 0x45, 0x2b, 0xe1, 0x81,
+	0x50, 0x77, 0x0e, 0x0a, 0x79, 0x0b, 0x21, 0x50, 0xe8, 0xbb, 0x07, 0xe0, 0x83, 0x28, 0x70, 0x11,
+	0x51, 0x9f, 0x8e, 0x0a, 0xef, 0xc3, 0xfa, 0x02, 0x6e, 0x29, 0x25, 0xc4, 0x61, 0x8e, 0xb7, 0xe8,
+	0x05, 0xd4, 0x22, 0x1a, 0x2f, 0xa4, 0x79, 0x1e, 0x55, 0xf9, 0xaf, 0x44, 0x95, 0xe7, 0xf4, 0x99,
+	0xce, 0x17, 0xb0, 0xdb, 0x65, 0xfc, 0xd2, 0xb1, 0x0d, 0x73, 0xc4, 0x7a, 0x26, 0xbf, 0xb1, 0x3d,
+	0x7e, 0x3e, 0x98, 0x3c, 0xd5, 0x89, 0xf4, 0x04, 0xd4, 0xe4, 0x7a, 0x49, 0x7f, 0x5f, 0x39, 0x6c,
+	0x60, 0x7d, 0xc0, 0x07, 0x58, 0xac, 0xa2, 0xe1, 0x33, 0x3d, 0x83, 0xed, 0x2e, 0xe3, 0x1f, 0x2c,
+	0x73, 0x68, 0xeb, 0xec, 0xc4, 0xd2, 0xd9, 0x83, 0x9b, 0x36, 0x96, 0x02, 0x45, 0xcf, 0xe7, 0x07,
+	0x63, 0xcd, 0x42, 0xfa, 0x3f, 0xd4, 0x96, 0x8b, 0xe1, 0x4c, 0x35, 0x28, 0x98, 0x18, 0xa3, 0x70,
+	0xb2, 0x16, 0x44, 0xf4, 0x1d, 0x54, 0xbb, 0x8c, 0x77, 0x47, 0x53, 0xc3, 0x45, 0x7e, 0x5a, 0xef,
+	0x2a, 0xe4, 0x31, 0x33, 0xe8, 0xec, 0x07, 0xf4, 0x0d, 0x6c, 0xc5, 0xaa, 0x60, 0xd3, 0x39, 0x59,
+	0x0a, 0x91, 0x13, 0x55, 0x38, 0xc5, 0xc1, 0xb1, 0x40, 0x30, 0xfd, 0xd3, 0x45, 0xb8, 0x81, 0x3f,
+	0x96, 0x6a, 0xe1, 0x38, 0xa1, 0x14, 0x29, 0x92, 0x42, 0x5e, 0x40, 0x5e, 0x8c, 0xe1, 0x2a, 0x59,
+	0x74, 0xd5, 0x7e, 0xd8, 0x55, 0x09, 0x3f, 0x4c, 0xf3, 0xd9, 0xf4, 0x02, 0x6d, 0x20, 0x9c, 0xfa,
+	0xe4, 0xc9, 0x73, 0xe1, 0xc9, 0xaf, 0x60, 0x27, 0xb1, 0x1e, 0x4e, 0xff, 0x32, 0xea, 0xfc, 0xbf,
+	0x93, 0x66, 0x8c, 0x64, 0x04, 0xe6, 0x6f, 0xfd, 0xcc, 0x43, 0xb1, 0xeb, 0x30, 0xc6, 0x99, 0x43,
+	0xce, 0xa0, 0x8c, 0x1b, 0x22, 0x56, 0x85, 0x3c, 0x7a, 0x45, 0xa9, 0x29, 0xab, 0x45, 0x33, 0xa4,
+	0x07, 0xb2, 0x98, 0x75, 0x51, 0xb0, 0x1e, 0x4e, 0x49, 0xba, 0x24, 0x55, 0xba, 0x92, 0x11, 0x2e,
+	0xdc, 0x81, 0xd2, 0xec, 0x65, 0x44, 0x76, 0x93, 0x5f, 0x51, 0x7e, 0x39, 0x75, 0xf5, 0xfb, 0x8b,
+	0x66, 0x88, 0x89, 0xde, 0x5e, 0xda, 0x52, 0xf2, 0x6f, 0x4c, 0xba, 0x55, 0xf7, 0x82, 0xfa, 0x4f,
+	0x3a, 0x31, 0x68, 0xf5, 0x19, 0x36, 0xe3, 0x8b, 0x47, 0x0e, 0x62, 0xd9, 0x49, 0x3b, 0x1e, 0x15,
+	0x24, 0x79, 0x77, 0x69, 0x86, 0x5c, 0x81, 0x1c, 0xb1, 0x61, 0x54, 0xe9, 0xa4, 0x05, 0x56, 0xd3,
+	0x3c, 0x4c, 0x33, 0xe4, 0x13, 0x6c, 0xc4, 0x8c, 0x43, 0xe8, 0xa3, 0xae, 0xf2, 0x2b, 0xa7, 0x3b,
+	0x8f, 0x66, 0x88, 0x81, 0x37, 0x42, 0xdc, 0xca, 0x24, 0xae, 0xe8, 0x8a, 0xdd, 0x51, 0x0f, 0x53,
+	0x79, 0x7e, 0x9f, 0xf6, 0x21, 0x6c, 0x99, 0x76, 0xf3, 0x8b, 0x33, 0x19, 0x36, 0x05, 0x35, 0xc8,
+	0x6a, 0x57, 0x7a, 0xfe, 0xc3, 0xa5, 0xf8, 0x7e, 0xba, 0x94, 0xae, 0x0b, 0xf8, 0x21, 0xf5, 0xec,
+	0x57, 0x00, 0x00, 0x00, 0xff, 0xff, 0x38, 0x3d, 0x62, 0x0b, 0x59, 0x09, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -412,6 +910,16 @@ type GreeterClient interface {
 	MultBuildFont(ctx context.Context, in *MultFontBuildRequest, opts ...grpc.CallOption) (*MultFontBuildBufResult, error)
 	//Get my fontlist
 	FontList(ctx context.Context, in *FontListRequest, opts ...grpc.CallOption) (*FontListResult, error)
+	//GetProfile
+	GetProfileWithoutMap(ctx context.Context, in *GetProfileWithoutMapRequest, opts ...grpc.CallOption) (*GetProfileWithoutMapResult, error)
+	//GetUnicodeIndexs
+	GetUnicodeIndexs(ctx context.Context, in *GetUnicodeIndexsRequest, opts ...grpc.CallOption) (*GetUnicodeIndexsResult, error)
+	//GetGlyfs Index
+	GetGlyfsIndex(ctx context.Context, in *GetGlyfsIndexRequest, opts ...grpc.CallOption) (*GetGlyfsIndexResult, error)
+	//GetGlyfs Unicode
+	GetGlyfsUnicode(ctx context.Context, in *GetGlyfsUnicodeRequest, opts ...grpc.CallOption) (*GetGlyfsUnicodeResult, error)
+	//GetMultGlyfsUnicode
+	GetMultGlyfsUnicode(ctx context.Context, in *GetMultGlyfsUnicodeRequest, opts ...grpc.CallOption) (*GetMultGlyfsUnicodeResult, error)
 }
 
 type greeterClient struct {
@@ -449,6 +957,51 @@ func (c *greeterClient) FontList(ctx context.Context, in *FontListRequest, opts 
 	return out, nil
 }
 
+func (c *greeterClient) GetProfileWithoutMap(ctx context.Context, in *GetProfileWithoutMapRequest, opts ...grpc.CallOption) (*GetProfileWithoutMapResult, error) {
+	out := new(GetProfileWithoutMapResult)
+	err := c.cc.Invoke(ctx, "/webfontsdk.Greeter/GetProfileWithoutMap", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) GetUnicodeIndexs(ctx context.Context, in *GetUnicodeIndexsRequest, opts ...grpc.CallOption) (*GetUnicodeIndexsResult, error) {
+	out := new(GetUnicodeIndexsResult)
+	err := c.cc.Invoke(ctx, "/webfontsdk.Greeter/GetUnicodeIndexs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) GetGlyfsIndex(ctx context.Context, in *GetGlyfsIndexRequest, opts ...grpc.CallOption) (*GetGlyfsIndexResult, error) {
+	out := new(GetGlyfsIndexResult)
+	err := c.cc.Invoke(ctx, "/webfontsdk.Greeter/GetGlyfsIndex", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) GetGlyfsUnicode(ctx context.Context, in *GetGlyfsUnicodeRequest, opts ...grpc.CallOption) (*GetGlyfsUnicodeResult, error) {
+	out := new(GetGlyfsUnicodeResult)
+	err := c.cc.Invoke(ctx, "/webfontsdk.Greeter/GetGlyfsUnicode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *greeterClient) GetMultGlyfsUnicode(ctx context.Context, in *GetMultGlyfsUnicodeRequest, opts ...grpc.CallOption) (*GetMultGlyfsUnicodeResult, error) {
+	out := new(GetMultGlyfsUnicodeResult)
+	err := c.cc.Invoke(ctx, "/webfontsdk.Greeter/GetMultGlyfsUnicode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // GreeterServer is the server API for Greeter service.
 type GreeterServer interface {
 	//BuildFont
@@ -457,6 +1010,16 @@ type GreeterServer interface {
 	MultBuildFont(context.Context, *MultFontBuildRequest) (*MultFontBuildBufResult, error)
 	//Get my fontlist
 	FontList(context.Context, *FontListRequest) (*FontListResult, error)
+	//GetProfile
+	GetProfileWithoutMap(context.Context, *GetProfileWithoutMapRequest) (*GetProfileWithoutMapResult, error)
+	//GetUnicodeIndexs
+	GetUnicodeIndexs(context.Context, *GetUnicodeIndexsRequest) (*GetUnicodeIndexsResult, error)
+	//GetGlyfs Index
+	GetGlyfsIndex(context.Context, *GetGlyfsIndexRequest) (*GetGlyfsIndexResult, error)
+	//GetGlyfs Unicode
+	GetGlyfsUnicode(context.Context, *GetGlyfsUnicodeRequest) (*GetGlyfsUnicodeResult, error)
+	//GetMultGlyfsUnicode
+	GetMultGlyfsUnicode(context.Context, *GetMultGlyfsUnicodeRequest) (*GetMultGlyfsUnicodeResult, error)
 }
 
 func RegisterGreeterServer(s *grpc.Server, srv GreeterServer) {
@@ -517,6 +1080,96 @@ func _Greeter_FontList_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Greeter_GetProfileWithoutMap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProfileWithoutMapRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).GetProfileWithoutMap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/webfontsdk.Greeter/GetProfileWithoutMap",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).GetProfileWithoutMap(ctx, req.(*GetProfileWithoutMapRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_GetUnicodeIndexs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUnicodeIndexsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).GetUnicodeIndexs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/webfontsdk.Greeter/GetUnicodeIndexs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).GetUnicodeIndexs(ctx, req.(*GetUnicodeIndexsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_GetGlyfsIndex_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGlyfsIndexRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).GetGlyfsIndex(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/webfontsdk.Greeter/GetGlyfsIndex",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).GetGlyfsIndex(ctx, req.(*GetGlyfsIndexRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_GetGlyfsUnicode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGlyfsUnicodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).GetGlyfsUnicode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/webfontsdk.Greeter/GetGlyfsUnicode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).GetGlyfsUnicode(ctx, req.(*GetGlyfsUnicodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Greeter_GetMultGlyfsUnicode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMultGlyfsUnicodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GreeterServer).GetMultGlyfsUnicode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/webfontsdk.Greeter/GetMultGlyfsUnicode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GreeterServer).GetMultGlyfsUnicode(ctx, req.(*GetMultGlyfsUnicodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Greeter_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "webfontsdk.Greeter",
 	HandlerType: (*GreeterServer)(nil),
@@ -532,6 +1185,26 @@ var _Greeter_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "FontList",
 			Handler:    _Greeter_FontList_Handler,
+		},
+		{
+			MethodName: "GetProfileWithoutMap",
+			Handler:    _Greeter_GetProfileWithoutMap_Handler,
+		},
+		{
+			MethodName: "GetUnicodeIndexs",
+			Handler:    _Greeter_GetUnicodeIndexs_Handler,
+		},
+		{
+			MethodName: "GetGlyfsIndex",
+			Handler:    _Greeter_GetGlyfsIndex_Handler,
+		},
+		{
+			MethodName: "GetGlyfsUnicode",
+			Handler:    _Greeter_GetGlyfsUnicode_Handler,
+		},
+		{
+			MethodName: "GetMultGlyfsUnicode",
+			Handler:    _Greeter_GetMultGlyfsUnicode_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
