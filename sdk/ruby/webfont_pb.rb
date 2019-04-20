@@ -57,8 +57,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :font_checksum, :uint32, 3
     repeated :unicodes, :uint32, 4
   end
+  add_message "webfontsdk.indexs" do
+    repeated :items, :uint32, 2
+  end
   add_message "webfontsdk.GetMultGlyfsUnicodeResult" do
-    repeated :items, :message, 1, "webfontsdk.GetGlyfsUnicodeResult"
+    map :unicodes, :uint32, :message, 1, "webfontsdk.indexs"
+    map :indexs, :uint32, :bytes, 3
   end
 end
 
@@ -74,5 +78,6 @@ module Webfontsdk
   GetGlyfsIndexResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetGlyfsIndexResult").msgclass
   GetGlyfsUnicodeResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetGlyfsUnicodeResult").msgclass
   GetMultGlyfsUnicodeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetMultGlyfsUnicodeRequest").msgclass
+  Indexs = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.indexs").msgclass
   GetMultGlyfsUnicodeResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetMultGlyfsUnicodeResult").msgclass
 end

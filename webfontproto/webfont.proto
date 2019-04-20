@@ -137,10 +137,10 @@ message GetMultGlyfsUnicodeRequest {
 
 
 message indexs {
-    repeated uint32 indexs=2;
+    repeated uint32 items=2;
 }
 
 message GetMultGlyfsUnicodeResult {
-    map<uint32,UnicodeIndexPeer> unicodes=1;
+    map<uint32,indexs> unicodes=1;
     map<uint32,bytes> indexs=3;
 }
