@@ -136,12 +136,11 @@ message GetMultGlyfsUnicodeRequest {
 }
 
 
-message GetUnicodeIndexsResult {
-    uint32 unicode=1;
+message indexs {
     repeated uint32 indexs=2;
 }
 
 message GetMultGlyfsUnicodeResult {
-    repeated GetUnicodeIndexsResult unicodes=1;
-    repeated GetGlyfsIndexResult indexs=2;
+    map<uint32,UnicodeIndexPeer> unicodes=1;
+    map<uint32,bytes> indexs=3;
 }
