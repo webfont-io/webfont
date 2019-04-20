@@ -135,6 +135,13 @@ message GetMultGlyfsUnicodeRequest {
     repeated uint32 unicodes=4;
 }
 
+
+message GetUnicodeIndexsResult {
+    uint32 unicode=1;
+    repeated uint32 indexs=2;
+}
+
 message GetMultGlyfsUnicodeResult {
-    repeated GetGlyfsUnicodeResult items=1;
+    repeated GetUnicodeIndexsResult unicodes=1;
+    repeated GetGlyfsIndexResult indexs=2;
 }
