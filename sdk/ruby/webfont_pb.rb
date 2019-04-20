@@ -43,14 +43,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :font_id, :uint32, 1
     optional :data, :bytes, 2
   end
-  add_message "webfontsdk.GetGlyfsIndexResult" do
-    optional :index, :uint32, 1
-    optional :data, :bytes, 2
-  end
-  add_message "webfontsdk.GetGlyfsUnicodeResult" do
-    optional :unicode, :uint32, 1
-    repeated :datas, :message, 2, "webfontsdk.GetGlyfsIndexResult"
-  end
   add_message "webfontsdk.GetMultGlyfsUnicodeRequest" do
     optional :apikey, :string, 1
     optional :font_id, :uint32, 2
@@ -75,8 +67,6 @@ module Webfontsdk
   MultFontBuildBufResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.MultFontBuildBufResult").msgclass
   GetProfileWithoutMapRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetProfileWithoutMapRequest").msgclass
   GetProfileWithoutMapResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetProfileWithoutMapResult").msgclass
-  GetGlyfsIndexResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetGlyfsIndexResult").msgclass
-  GetGlyfsUnicodeResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetGlyfsUnicodeResult").msgclass
   GetMultGlyfsUnicodeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetMultGlyfsUnicodeRequest").msgclass
   Indexs = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.indexs").msgclass
   GetMultGlyfsUnicodeResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("webfontsdk.GetMultGlyfsUnicodeResult").msgclass
