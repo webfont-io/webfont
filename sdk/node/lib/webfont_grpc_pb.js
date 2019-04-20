@@ -48,6 +48,50 @@ function deserialize_webfontsdk_FontListResult(buffer_arg) {
   return webfont_pb.FontListResult.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_webfontsdk_GetGlyfsIndexRequest(arg) {
+  if (!(arg instanceof webfont_pb.GetGlyfsIndexRequest)) {
+    throw new Error('Expected argument of type webfontsdk.GetGlyfsIndexRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_webfontsdk_GetGlyfsIndexRequest(buffer_arg) {
+  return webfont_pb.GetGlyfsIndexRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_webfontsdk_GetGlyfsIndexResult(arg) {
+  if (!(arg instanceof webfont_pb.GetGlyfsIndexResult)) {
+    throw new Error('Expected argument of type webfontsdk.GetGlyfsIndexResult');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_webfontsdk_GetGlyfsIndexResult(buffer_arg) {
+  return webfont_pb.GetGlyfsIndexResult.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_webfontsdk_GetGlyfsUnicodeRequest(arg) {
+  if (!(arg instanceof webfont_pb.GetGlyfsUnicodeRequest)) {
+    throw new Error('Expected argument of type webfontsdk.GetGlyfsUnicodeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_webfontsdk_GetGlyfsUnicodeRequest(buffer_arg) {
+  return webfont_pb.GetGlyfsUnicodeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_webfontsdk_GetGlyfsUnicodeResult(arg) {
+  if (!(arg instanceof webfont_pb.GetGlyfsUnicodeResult)) {
+    throw new Error('Expected argument of type webfontsdk.GetGlyfsUnicodeResult');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_webfontsdk_GetGlyfsUnicodeResult(buffer_arg) {
+  return webfont_pb.GetGlyfsUnicodeResult.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_webfontsdk_GetMultGlyfsUnicodeRequest(arg) {
   if (!(arg instanceof webfont_pb.GetMultGlyfsUnicodeRequest)) {
     throw new Error('Expected argument of type webfontsdk.GetMultGlyfsUnicodeRequest');
@@ -90,6 +134,28 @@ function serialize_webfontsdk_GetProfileWithoutMapResult(arg) {
 
 function deserialize_webfontsdk_GetProfileWithoutMapResult(buffer_arg) {
   return webfont_pb.GetProfileWithoutMapResult.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_webfontsdk_GetUnicodeIndexsRequest(arg) {
+  if (!(arg instanceof webfont_pb.GetUnicodeIndexsRequest)) {
+    throw new Error('Expected argument of type webfontsdk.GetUnicodeIndexsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_webfontsdk_GetUnicodeIndexsRequest(buffer_arg) {
+  return webfont_pb.GetUnicodeIndexsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_webfontsdk_GetUnicodeIndexsResult(arg) {
+  if (!(arg instanceof webfont_pb.GetUnicodeIndexsResult)) {
+    throw new Error('Expected argument of type webfontsdk.GetUnicodeIndexsResult');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_webfontsdk_GetUnicodeIndexsResult(buffer_arg) {
+  return webfont_pb.GetUnicodeIndexsResult.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_webfontsdk_MultFontBuildBufResult(arg) {
@@ -166,14 +232,41 @@ var GreeterService = exports.GreeterService = {
     responseDeserialize: deserialize_webfontsdk_GetProfileWithoutMapResult,
   },
   // GetUnicodeIndexs
-  // rpc GetUnicodeIndexs(GetUnicodeIndexsRequest) returns (GetUnicodeIndexsResult) {}
-  //
+  getUnicodeIndexs: {
+    path: '/webfontsdk.Greeter/GetUnicodeIndexs',
+    requestStream: false,
+    responseStream: false,
+    requestType: webfont_pb.GetUnicodeIndexsRequest,
+    responseType: webfont_pb.GetUnicodeIndexsResult,
+    requestSerialize: serialize_webfontsdk_GetUnicodeIndexsRequest,
+    requestDeserialize: deserialize_webfontsdk_GetUnicodeIndexsRequest,
+    responseSerialize: serialize_webfontsdk_GetUnicodeIndexsResult,
+    responseDeserialize: deserialize_webfontsdk_GetUnicodeIndexsResult,
+  },
   // GetGlyfs Index
-  // rpc GetGlyfsIndex(GetGlyfsIndexRequest) returns (GetGlyfsIndexResult) {}
-  //
+  getGlyfsIndex: {
+    path: '/webfontsdk.Greeter/GetGlyfsIndex',
+    requestStream: false,
+    responseStream: false,
+    requestType: webfont_pb.GetGlyfsIndexRequest,
+    responseType: webfont_pb.GetGlyfsIndexResult,
+    requestSerialize: serialize_webfontsdk_GetGlyfsIndexRequest,
+    requestDeserialize: deserialize_webfontsdk_GetGlyfsIndexRequest,
+    responseSerialize: serialize_webfontsdk_GetGlyfsIndexResult,
+    responseDeserialize: deserialize_webfontsdk_GetGlyfsIndexResult,
+  },
   // GetGlyfs Unicode
-  // rpc GetGlyfsUnicode(GetGlyfsUnicodeRequest) returns (GetGlyfsUnicodeResult) {}
-  //
+  getGlyfsUnicode: {
+    path: '/webfontsdk.Greeter/GetGlyfsUnicode',
+    requestStream: false,
+    responseStream: false,
+    requestType: webfont_pb.GetGlyfsUnicodeRequest,
+    responseType: webfont_pb.GetGlyfsUnicodeResult,
+    requestSerialize: serialize_webfontsdk_GetGlyfsUnicodeRequest,
+    requestDeserialize: deserialize_webfontsdk_GetGlyfsUnicodeRequest,
+    responseSerialize: serialize_webfontsdk_GetGlyfsUnicodeResult,
+    responseDeserialize: deserialize_webfontsdk_GetGlyfsUnicodeResult,
+  },
   // GetMultGlyfsUnicode
   getMultGlyfsUnicode: {
     path: '/webfontsdk.Greeter/GetMultGlyfsUnicode',

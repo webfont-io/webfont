@@ -15,12 +15,16 @@ goog.exportSymbol('proto.webfontsdk.FontBuildBufResult', null, global);
 goog.exportSymbol('proto.webfontsdk.FontBuildRequest', null, global);
 goog.exportSymbol('proto.webfontsdk.FontListRequest', null, global);
 goog.exportSymbol('proto.webfontsdk.FontListResult', null, global);
+goog.exportSymbol('proto.webfontsdk.GetGlyfsIndexRequest', null, global);
 goog.exportSymbol('proto.webfontsdk.GetGlyfsIndexResult', null, global);
+goog.exportSymbol('proto.webfontsdk.GetGlyfsUnicodeRequest', null, global);
 goog.exportSymbol('proto.webfontsdk.GetGlyfsUnicodeResult', null, global);
 goog.exportSymbol('proto.webfontsdk.GetMultGlyfsUnicodeRequest', null, global);
 goog.exportSymbol('proto.webfontsdk.GetMultGlyfsUnicodeResult', null, global);
 goog.exportSymbol('proto.webfontsdk.GetProfileWithoutMapRequest', null, global);
 goog.exportSymbol('proto.webfontsdk.GetProfileWithoutMapResult', null, global);
+goog.exportSymbol('proto.webfontsdk.GetUnicodeIndexsRequest', null, global);
+goog.exportSymbol('proto.webfontsdk.GetUnicodeIndexsResult', null, global);
 goog.exportSymbol('proto.webfontsdk.MultFontBuildBufResult', null, global);
 goog.exportSymbol('proto.webfontsdk.MultFontBuildRequest', null, global);
 
@@ -1757,6 +1761,561 @@ proto.webfontsdk.GetProfileWithoutMapResult.prototype.setData = function(value) 
  * @extends {jspb.Message}
  * @constructor
  */
+proto.webfontsdk.GetUnicodeIndexsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.webfontsdk.GetUnicodeIndexsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.webfontsdk.GetUnicodeIndexsRequest.displayName = 'proto.webfontsdk.GetUnicodeIndexsRequest';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.webfontsdk.GetUnicodeIndexsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.webfontsdk.GetUnicodeIndexsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    unicode: jspb.Message.getFieldWithDefault(msg, 3, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.webfontsdk.GetUnicodeIndexsRequest}
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.webfontsdk.GetUnicodeIndexsRequest;
+  return proto.webfontsdk.GetUnicodeIndexsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.webfontsdk.GetUnicodeIndexsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.webfontsdk.GetUnicodeIndexsRequest}
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApikey(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFontId(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setUnicode(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.webfontsdk.GetUnicodeIndexsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.webfontsdk.GetUnicodeIndexsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getApikey();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getFontId();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getUnicode();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string apikey = 1;
+ * @return {string}
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.getApikey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.setApikey = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 font_id = 2;
+ * @return {number}
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.getFontId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.setFontId = function(value) {
+  jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 unicode = 3;
+ * @return {number}
+ */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.getUnicode = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetUnicodeIndexsRequest.prototype.setUnicode = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.webfontsdk.GetUnicodeIndexsResult = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.webfontsdk.GetUnicodeIndexsResult.repeatedFields_, null);
+};
+goog.inherits(proto.webfontsdk.GetUnicodeIndexsResult, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.webfontsdk.GetUnicodeIndexsResult.displayName = 'proto.webfontsdk.GetUnicodeIndexsResult';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.prototype.toObject = function(opt_includeInstance) {
+  return proto.webfontsdk.GetUnicodeIndexsResult.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.webfontsdk.GetUnicodeIndexsResult} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    indexsList: jspb.Message.getRepeatedField(msg, 1)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.webfontsdk.GetUnicodeIndexsResult}
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.webfontsdk.GetUnicodeIndexsResult;
+  return proto.webfontsdk.GetUnicodeIndexsResult.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.webfontsdk.GetUnicodeIndexsResult} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.webfontsdk.GetUnicodeIndexsResult}
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
+      msg.setIndexsList(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.webfontsdk.GetUnicodeIndexsResult.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.webfontsdk.GetUnicodeIndexsResult} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getIndexsList();
+  if (f.length > 0) {
+    writer.writePackedUint32(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated uint32 indexs = 1;
+ * @return {!Array<number>}
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.prototype.getIndexsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/** @param {!Array<number>} value */
+proto.webfontsdk.GetUnicodeIndexsResult.prototype.setIndexsList = function(value) {
+  jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ */
+proto.webfontsdk.GetUnicodeIndexsResult.prototype.addIndexs = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+proto.webfontsdk.GetUnicodeIndexsResult.prototype.clearIndexsList = function() {
+  this.setIndexsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.webfontsdk.GetGlyfsIndexRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.webfontsdk.GetGlyfsIndexRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.webfontsdk.GetGlyfsIndexRequest.displayName = 'proto.webfontsdk.GetGlyfsIndexRequest';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.webfontsdk.GetGlyfsIndexRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.webfontsdk.GetGlyfsIndexRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    index: jspb.Message.getFieldWithDefault(msg, 3, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.webfontsdk.GetGlyfsIndexRequest}
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.webfontsdk.GetGlyfsIndexRequest;
+  return proto.webfontsdk.GetGlyfsIndexRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.webfontsdk.GetGlyfsIndexRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.webfontsdk.GetGlyfsIndexRequest}
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApikey(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFontId(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setIndex(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.webfontsdk.GetGlyfsIndexRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.webfontsdk.GetGlyfsIndexRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getApikey();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getFontId();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getIndex();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string apikey = 1;
+ * @return {string}
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.getApikey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.setApikey = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 font_id = 2;
+ * @return {number}
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.getFontId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.setFontId = function(value) {
+  jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 index = 3;
+ * @return {number}
+ */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.getIndex = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetGlyfsIndexRequest.prototype.setIndex = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.webfontsdk.GetGlyfsIndexResult = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1936,6 +2495,202 @@ proto.webfontsdk.GetGlyfsIndexResult.prototype.getData_asU8 = function() {
 /** @param {!(string|Uint8Array)} value */
 proto.webfontsdk.GetGlyfsIndexResult.prototype.setData = function(value) {
   jspb.Message.setProto3BytesField(this, 2, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.webfontsdk.GetGlyfsUnicodeRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.webfontsdk.GetGlyfsUnicodeRequest.displayName = 'proto.webfontsdk.GetGlyfsUnicodeRequest';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.webfontsdk.GetGlyfsUnicodeRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.webfontsdk.GetGlyfsUnicodeRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    unicode: jspb.Message.getFieldWithDefault(msg, 3, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.webfontsdk.GetGlyfsUnicodeRequest}
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.webfontsdk.GetGlyfsUnicodeRequest;
+  return proto.webfontsdk.GetGlyfsUnicodeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.webfontsdk.GetGlyfsUnicodeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.webfontsdk.GetGlyfsUnicodeRequest}
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApikey(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setFontId(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setUnicode(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.webfontsdk.GetGlyfsUnicodeRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.webfontsdk.GetGlyfsUnicodeRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getApikey();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getFontId();
+  if (f !== 0) {
+    writer.writeUint32(
+      2,
+      f
+    );
+  }
+  f = message.getUnicode();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string apikey = 1;
+ * @return {string}
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.getApikey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.setApikey = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional uint32 font_id = 2;
+ * @return {number}
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.getFontId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.setFontId = function(value) {
+  jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional uint32 unicode = 3;
+ * @return {number}
+ */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.getUnicode = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.webfontsdk.GetGlyfsUnicodeRequest.prototype.setUnicode = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -2157,7 +2912,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.webfontsdk.GetMultGlyfsUnicodeRequest.repeatedFields_ = [4];
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.repeatedFields_ = [3];
 
 
 
@@ -2190,8 +2945,7 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.toObject = function(includeInstance,
   var f, obj = {
     apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    fontChecksum: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    unicodesList: jspb.Message.getRepeatedField(msg, 4)
+    unicodeList: jspb.Message.getRepeatedField(msg, 3)
   };
 
   if (includeInstance) {
@@ -2237,12 +2991,8 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.deserializeBinaryFromReader = functi
       msg.setFontId(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setFontChecksum(value);
-      break;
-    case 4:
       var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
-      msg.setUnicodesList(value);
+      msg.setUnicodeList(value);
       break;
     default:
       reader.skipField();
@@ -2287,17 +3037,10 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getFontChecksum();
-  if (f !== 0) {
-    writer.writeUint32(
-      3,
-      f
-    );
-  }
-  f = message.getUnicodesList();
+  f = message.getUnicodeList();
   if (f.length > 0) {
     writer.writePackedUint32(
-      4,
+      3,
       f
     );
   }
@@ -2335,32 +3078,17 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setFontId = function(value
 
 
 /**
- * optional uint32 font_checksum = 3;
- * @return {number}
- */
-proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.getFontChecksum = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/** @param {number} value */
-proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setFontChecksum = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * repeated uint32 unicodes = 4;
+ * repeated uint32 unicode = 3;
  * @return {!Array<number>}
  */
-proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.getUnicodesList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.getUnicodeList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /** @param {!Array<number>} value */
-proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setUnicodesList = function(value) {
-  jspb.Message.setField(this, 4, value || []);
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setUnicodeList = function(value) {
+  jspb.Message.setField(this, 3, value || []);
 };
 
 
@@ -2368,13 +3096,13 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setUnicodesList = function
  * @param {number} value
  * @param {number=} opt_index
  */
-proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.addUnicodes = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.addUnicode = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
-proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.clearUnicodesList = function() {
-  this.setUnicodesList([]);
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.clearUnicodeList = function() {
+  this.setUnicodeList([]);
 };
 
 
