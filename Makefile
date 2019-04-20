@@ -9,7 +9,7 @@ init:
 git:
 	make protoc
 	make mod
-	-git autotag -commit 'fix proto struct' -t -f -p
+	-git autotag -commit 'fix proto struct' -i -t -f -p
 mod:
 	go build ./...
 doc:

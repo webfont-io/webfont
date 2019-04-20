@@ -23,18 +23,17 @@ service Greeter {
 
 
     //GetUnicodeIndexs
-    rpc GetUnicodeIndexs(GetUnicodeIndexsRequest) returns (GetUnicodeIndexsResult) {}
+    //rpc GetUnicodeIndexs(GetUnicodeIndexsRequest) returns (GetUnicodeIndexsResult) {}
 
     //GetGlyfs Index
-    rpc GetGlyfsIndex(GetGlyfsIndexRequest) returns (GetGlyfsIndexResult) {}
+    //rpc GetGlyfsIndex(GetGlyfsIndexRequest) returns (GetGlyfsIndexResult) {}
 
 
     //GetGlyfs Unicode
-    rpc GetGlyfsUnicode(GetGlyfsUnicodeRequest) returns (GetGlyfsUnicodeResult) {}
+    //rpc GetGlyfsUnicode(GetGlyfsUnicodeRequest) returns (GetGlyfsUnicodeResult) {}
 
     //GetMultGlyfsUnicode
     rpc GetMultGlyfsUnicode(GetMultGlyfsUnicodeRequest) returns (GetMultGlyfsUnicodeResult) {}
-
 }
 
 message FontListRequest {
@@ -90,7 +89,7 @@ message GetProfileWithoutMapResult {
     bytes data=2;
 }
 
-
+/*
 message GetUnicodeIndexsRequest {
     string apikey=1;
     uint32 font_id=2;
@@ -108,10 +107,6 @@ message GetGlyfsIndexRequest {
     uint32 index=3;
 }
 
-message GetGlyfsIndexResult {
-    uint32 index=1;
-    bytes data=2;
-}
 
 
 message GetGlyfsUnicodeRequest {
@@ -120,6 +115,12 @@ message GetGlyfsUnicodeRequest {
     uint32 unicode=3;
 }
 
+*/
+
+message GetGlyfsIndexResult {
+    uint32 index=1;
+    bytes data=2;
+}
 
 message GetGlyfsUnicodeResult {
     uint32 unicode=1;
@@ -130,7 +131,8 @@ message GetGlyfsUnicodeResult {
 message GetMultGlyfsUnicodeRequest {
     string apikey=1;
     uint32 font_id=2;
-    repeated uint32 unicode=3;
+    uint32 font_checksum=3;
+    repeated uint32 unicodes=4;
 }
 
 message GetMultGlyfsUnicodeResult {
