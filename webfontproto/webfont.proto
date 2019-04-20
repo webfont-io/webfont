@@ -115,7 +115,7 @@ message GetGlyfsUnicodeRequest {
     uint32 unicode=3;
 }
 
-*/
+
 
 message GetGlyfsIndexResult {
     uint32 index=1;
@@ -126,7 +126,7 @@ message GetGlyfsUnicodeResult {
     uint32 unicode=1;
     repeated GetGlyfsIndexResult datas = 2;
 }
-
+*/
 
 message GetMultGlyfsUnicodeRequest {
     string apikey=1;
@@ -134,7 +134,6 @@ message GetMultGlyfsUnicodeRequest {
     uint32 font_checksum=3;
     repeated uint32 unicodes=4;
 }
-
 
 message indexs {
     repeated uint32 items=2;
