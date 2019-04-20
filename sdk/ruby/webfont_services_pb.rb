@@ -24,11 +24,14 @@ module Webfontsdk
       # GetProfile
       rpc :GetProfileWithoutMap, GetProfileWithoutMapRequest, GetProfileWithoutMapResult
       # GetUnicodeIndexs
-      rpc :GetUnicodeIndexs, GetUnicodeIndexsRequest, GetUnicodeIndexsResult
+      # rpc GetUnicodeIndexs(GetUnicodeIndexsRequest) returns (GetUnicodeIndexsResult) {}
+      #
       # GetGlyfs Index
-      rpc :GetGlyfsIndex, GetGlyfsIndexRequest, GetGlyfsIndexResult
+      # rpc GetGlyfsIndex(GetGlyfsIndexRequest) returns (GetGlyfsIndexResult) {}
+      #
       # GetGlyfs Unicode
-      rpc :GetGlyfsUnicode, GetGlyfsUnicodeRequest, GetGlyfsUnicodeResult
+      # rpc GetGlyfsUnicode(GetGlyfsUnicodeRequest) returns (GetGlyfsUnicodeResult) {}
+      #
       # GetMultGlyfsUnicode
       rpc :GetMultGlyfsUnicode, GetMultGlyfsUnicodeRequest, GetMultGlyfsUnicodeResult
     end
