@@ -133,6 +133,7 @@ message GetMultGlyfsUnicodeRequest {
     uint32 font_id=2;
     uint32 font_checksum=3;
     repeated uint32 unicodes=4;
+    bool append_zero=5;    //追加0
 }
 
 message indexs {

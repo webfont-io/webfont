@@ -48,6 +48,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :font_id, :uint32, 2
     optional :font_checksum, :uint32, 3
     repeated :unicodes, :uint32, 4
+    optional :append_zero, :bool, 5
   end
   add_message "webfontsdk.indexs" do
     repeated :items, :uint32, 2

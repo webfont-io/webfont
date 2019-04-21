@@ -1802,7 +1802,8 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.toObject = function(includeInstance,
     apikey: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fontId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     fontChecksum: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    unicodesList: jspb.Message.getRepeatedField(msg, 4)
+    unicodesList: jspb.Message.getRepeatedField(msg, 4),
+    appendZero: jspb.Message.getFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -1854,6 +1855,10 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.deserializeBinaryFromReader = functi
     case 4:
       var value = /** @type {!Array<number>} */ (reader.readPackedUint32());
       msg.setUnicodesList(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setAppendZero(value);
       break;
     default:
       reader.skipField();
@@ -1909,6 +1914,13 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writePackedUint32(
       4,
+      f
+    );
+  }
+  f = message.getAppendZero();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -1986,6 +1998,23 @@ proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.addUnicodes = function(val
 
 proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.clearUnicodesList = function() {
   this.setUnicodesList([]);
+};
+
+
+/**
+ * optional bool append_zero = 5;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.getAppendZero = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 5, false));
+};
+
+
+/** @param {boolean} value */
+proto.webfontsdk.GetMultGlyfsUnicodeRequest.prototype.setAppendZero = function(value) {
+  jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
