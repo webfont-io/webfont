@@ -30,3 +30,4 @@ protoc:
 	@/usr/local/lib/ruby/gems/2.6.0/bin/grpc_tools_ruby_protoc -I webfontproto/ --ruby_out=sdk/ruby/ --grpc_out=sdk/ruby/ webfontproto/webfont.proto
 	@echo "java sdk building"
 	@rm sdk/java/src/main/proto/* && cp webfontproto/webfont.proto sdk/java/src/main/proto/
+	@cd sdk/java && ./gradlew installDist
