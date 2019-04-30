@@ -8,20 +8,10 @@ public interface FontListResultOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
   int getFontsCount();
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
   boolean containsFonts(
@@ -33,21 +23,11 @@ public interface FontListResultOrBuilder extends
   java.util.Map<java.lang.Integer, java.lang.Long>
   getFonts();
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
   java.util.Map<java.lang.Integer, java.lang.Long>
   getFontsMap();
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
 
@@ -55,11 +35,6 @@ public interface FontListResultOrBuilder extends
       int key,
       long defaultValue);
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
 

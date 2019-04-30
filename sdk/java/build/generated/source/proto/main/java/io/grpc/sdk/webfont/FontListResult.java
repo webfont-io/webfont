@@ -126,11 +126,6 @@ private static final long serialVersionUID = 0L;
     return internalGetFonts().getMap().size();
   }
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
 
@@ -147,11 +142,6 @@ private static final long serialVersionUID = 0L;
     return getFontsMap();
   }
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
 
@@ -159,11 +149,6 @@ private static final long serialVersionUID = 0L;
     return internalGetFonts().getMap();
   }
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
 
@@ -176,11 +161,6 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <pre>
-   *uint32 font_id = 1;
-   *uint64 express = 2;
-   * </pre>
-   *
    * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
    */
 
@@ -559,11 +539,6 @@ private static final long serialVersionUID = 0L;
       return internalGetFonts().getMap().size();
     }
     /**
-     * <pre>
-     *uint32 font_id = 1;
-     *uint64 express = 2;
-     * </pre>
-     *
      * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
      */
 
@@ -580,11 +555,6 @@ private static final long serialVersionUID = 0L;
       return getFontsMap();
     }
     /**
-     * <pre>
-     *uint32 font_id = 1;
-     *uint64 express = 2;
-     * </pre>
-     *
      * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
      */
 
@@ -592,11 +562,6 @@ private static final long serialVersionUID = 0L;
       return internalGetFonts().getMap();
     }
     /**
-     * <pre>
-     *uint32 font_id = 1;
-     *uint64 express = 2;
-     * </pre>
-     *
      * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
      */
 
@@ -609,11 +574,6 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <pre>
-     *uint32 font_id = 1;
-     *uint64 express = 2;
-     * </pre>
-     *
      * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
      */
 
@@ -634,11 +594,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *uint32 font_id = 1;
-     *uint64 express = 2;
-     * </pre>
-     *
      * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
      */
 
@@ -658,11 +613,6 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableFonts().getMutableMap();
     }
     /**
-     * <pre>
-     *uint32 font_id = 1;
-     *uint64 express = 2;
-     * </pre>
-     *
      * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
      */
     public Builder putFonts(
@@ -675,11 +625,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *uint32 font_id = 1;
-     *uint64 express = 2;
-     * </pre>
-     *
      * <code>map&lt;uint32, int64&gt; fonts = 1;</code>
      */
 

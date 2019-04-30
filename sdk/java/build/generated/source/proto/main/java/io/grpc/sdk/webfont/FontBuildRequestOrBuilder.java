@@ -8,29 +8,29 @@ public interface FontBuildRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 font_id = 1;</code>
+   * <code>string apikey = 1;</code>
+   */
+  java.lang.String getApikey();
+  /**
+   * <code>string apikey = 1;</code>
+   */
+  com.google.protobuf.ByteString
+      getApikeyBytes();
+
+  /**
+   * <code>uint32 font_id = 2;</code>
    */
   int getFontId();
 
   /**
-   * <code>string text = 2;</code>
+   * <code>string text = 3;</code>
    */
   java.lang.String getText();
   /**
-   * <code>string text = 2;</code>
+   * <code>string text = 3;</code>
    */
   com.google.protobuf.ByteString
       getTextBytes();
-
-  /**
-   * <code>string apikey = 3;</code>
-   */
-  java.lang.String getApikey();
-  /**
-   * <code>string apikey = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getApikeyBytes();
 
   /**
    * <code>bool need_ttf = 4;</code>
@@ -46,4 +46,9 @@ public interface FontBuildRequestOrBuilder extends
    * <code>bool need_woff = 6;</code>
    */
   boolean getNeedWoff();
+
+  /**
+   * <code>bool need_woff2 = 7;</code>
+   */
+  boolean getNeedWoff2();
 }

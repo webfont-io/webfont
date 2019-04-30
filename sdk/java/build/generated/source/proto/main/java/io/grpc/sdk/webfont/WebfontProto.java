@@ -49,6 +49,41 @@ public final class WebfontProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_webfontsdk_MultFontBuildBufResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_webfontsdk_GetProfileWithoutMapRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_webfontsdk_GetProfileWithoutMapRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_webfontsdk_GetProfileWithoutMapResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_webfontsdk_GetProfileWithoutMapResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_webfontsdk_GetMultGlyfsUnicodeRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_webfontsdk_GetMultGlyfsUnicodeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_webfontsdk_indexs_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_webfontsdk_indexs_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_webfontsdk_GetMultGlyfsUnicodeResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_UnicodesEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_webfontsdk_GetMultGlyfsUnicodeResult_UnicodesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_IndexsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_webfontsdk_GetMultGlyfsUnicodeResult_IndexsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -62,25 +97,45 @@ public final class WebfontProto {
       "equest\022\016\n\006apikey\030\001 \001(\t\"t\n\016FontListResult" +
       "\0224\n\005fonts\030\001 \003(\0132%.webfontsdk.FontListRes" +
       "ult.FontsEntry\032,\n\nFontsEntry\022\013\n\003key\030\001 \001(" +
-      "\r\022\r\n\005value\030\002 \001(\003:\0028\001\"x\n\020FontBuildRequest" +
-      "\022\017\n\007font_id\030\001 \001(\r\022\014\n\004text\030\002 \001(\t\022\016\n\006apike" +
-      "y\030\003 \001(\t\022\020\n\010need_ttf\030\004 \001(\010\022\020\n\010need_eot\030\005 " +
-      "\001(\010\022\021\n\tneed_woff\030\006 \001(\010\"C\n\024MultFontBuildR" +
-      "equest\022+\n\005items\030\001 \003(\0132\034.webfontsdk.FontB" +
-      "uildRequest\"\244\001\n\022FontBuildBufResult\022\017\n\007fo" +
-      "nt_id\030\001 \001(\r\022\033\n\023font_format_version\030\002 \001(\r" +
-      "\022\025\n\rfont_checksum\030\003 \001(\r\022\017\n\007name_en\030\004 \001(\t" +
-      "\022\021\n\tbytes_ttf\030\005 \001(\014\022\021\n\tbytes_eot\030\006 \001(\014\022\022" +
-      "\n\nbytes_woff\030\007 \001(\014\"G\n\026MultFontBuildBufRe" +
-      "sult\022-\n\005items\030\001 \003(\0132\036.webfontsdk.FontBui" +
-      "ldBufResult2\366\001\n\007Greeter\022K\n\tBuildFont\022\034.w" +
-      "ebfontsdk.FontBuildRequest\032\036.webfontsdk." +
-      "FontBuildBufResult\"\000\022W\n\rMultBuildFont\022 ." +
-      "webfontsdk.MultFontBuildRequest\032\".webfon" +
-      "tsdk.MultFontBuildBufResult\"\000\022E\n\010FontLis" +
-      "t\022\033.webfontsdk.FontListRequest\032\032.webfont" +
-      "sdk.FontListResult\"\000B%\n\023io.grpc.sdk.webf" +
-      "ontB\014WebfontProtoP\001b\006proto3"
+      "\r\022\r\n\005value\030\002 \001(\003:\0028\001\"\214\001\n\020FontBuildReques" +
+      "t\022\016\n\006apikey\030\001 \001(\t\022\017\n\007font_id\030\002 \001(\r\022\014\n\004te" +
+      "xt\030\003 \001(\t\022\020\n\010need_ttf\030\004 \001(\010\022\020\n\010need_eot\030\005" +
+      " \001(\010\022\021\n\tneed_woff\030\006 \001(\010\022\022\n\nneed_woff2\030\007 " +
+      "\001(\010\"C\n\024MultFontBuildRequest\022+\n\005items\030\001 \003" +
+      "(\0132\034.webfontsdk.FontBuildRequest\"\271\001\n\022Fon" +
+      "tBuildBufResult\022\017\n\007font_id\030\001 \001(\r\022\033\n\023font" +
+      "_format_version\030\002 \001(\r\022\025\n\rfont_checksum\030\003" +
+      " \001(\r\022\017\n\007name_en\030\004 \001(\t\022\021\n\tbytes_ttf\030\005 \001(\014" +
+      "\022\021\n\tbytes_eot\030\006 \001(\014\022\022\n\nbytes_woff\030\007 \001(\014\022" +
+      "\023\n\013bytes_woff2\030\010 \001(\014\"G\n\026MultFontBuildBuf" +
+      "Result\022-\n\005items\030\001 \003(\0132\036.webfontsdk.FontB" +
+      "uildBufResult\">\n\033GetProfileWithoutMapReq" +
+      "uest\022\016\n\006apikey\030\001 \001(\t\022\017\n\007font_id\030\002 \001(\r\";\n" +
+      "\032GetProfileWithoutMapResult\022\017\n\007font_id\030\001" +
+      " \001(\r\022\014\n\004data\030\002 \001(\014\"{\n\032GetMultGlyfsUnicod" +
+      "eRequest\022\016\n\006apikey\030\001 \001(\t\022\017\n\007font_id\030\002 \001(" +
+      "\r\022\025\n\rfont_checksum\030\003 \001(\r\022\020\n\010unicodes\030\004 \003" +
+      "(\r\022\023\n\013append_zero\030\005 \001(\010\"\027\n\006indexs\022\r\n\005ite" +
+      "ms\030\002 \003(\r\"\231\002\n\031GetMultGlyfsUnicodeResult\022E" +
+      "\n\010unicodes\030\001 \003(\01323.webfontsdk.GetMultGly" +
+      "fsUnicodeResult.UnicodesEntry\022A\n\006indexs\030" +
+      "\003 \003(\01321.webfontsdk.GetMultGlyfsUnicodeRe" +
+      "sult.IndexsEntry\032C\n\rUnicodesEntry\022\013\n\003key" +
+      "\030\001 \001(\r\022!\n\005value\030\002 \001(\0132\022.webfontsdk.index" +
+      "s:\0028\001\032-\n\013IndexsEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005val" +
+      "ue\030\002 \001(\014:\0028\0012\311\003\n\007Greeter\022K\n\tBuildFont\022\034." +
+      "webfontsdk.FontBuildRequest\032\036.webfontsdk" +
+      ".FontBuildBufResult\"\000\022W\n\rMultBuildFont\022 " +
+      ".webfontsdk.MultFontBuildRequest\032\".webfo" +
+      "ntsdk.MultFontBuildBufResult\"\000\022E\n\010FontLi" +
+      "st\022\033.webfontsdk.FontListRequest\032\032.webfon" +
+      "tsdk.FontListResult\"\000\022i\n\024GetProfileWitho" +
+      "utMap\022\'.webfontsdk.GetProfileWithoutMapR" +
+      "equest\032&.webfontsdk.GetProfileWithoutMap" +
+      "Result\"\000\022f\n\023GetMultGlyfsUnicode\022&.webfon" +
+      "tsdk.GetMultGlyfsUnicodeRequest\032%.webfon" +
+      "tsdk.GetMultGlyfsUnicodeResult\"\000B%\n\023io.g" +
+      "rpc.sdk.webfontB\014WebfontProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -117,7 +172,7 @@ public final class WebfontProto {
     internal_static_webfontsdk_FontBuildRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_webfontsdk_FontBuildRequest_descriptor,
-        new java.lang.String[] { "FontId", "Text", "Apikey", "NeedTtf", "NeedEot", "NeedWoff", });
+        new java.lang.String[] { "Apikey", "FontId", "Text", "NeedTtf", "NeedEot", "NeedWoff", "NeedWoff2", });
     internal_static_webfontsdk_MultFontBuildRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_webfontsdk_MultFontBuildRequest_fieldAccessorTable = new
@@ -129,13 +184,55 @@ public final class WebfontProto {
     internal_static_webfontsdk_FontBuildBufResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_webfontsdk_FontBuildBufResult_descriptor,
-        new java.lang.String[] { "FontId", "FontFormatVersion", "FontChecksum", "NameEn", "BytesTtf", "BytesEot", "BytesWoff", });
+        new java.lang.String[] { "FontId", "FontFormatVersion", "FontChecksum", "NameEn", "BytesTtf", "BytesEot", "BytesWoff", "BytesWoff2", });
     internal_static_webfontsdk_MultFontBuildBufResult_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_webfontsdk_MultFontBuildBufResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_webfontsdk_MultFontBuildBufResult_descriptor,
         new java.lang.String[] { "Items", });
+    internal_static_webfontsdk_GetProfileWithoutMapRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_webfontsdk_GetProfileWithoutMapRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_webfontsdk_GetProfileWithoutMapRequest_descriptor,
+        new java.lang.String[] { "Apikey", "FontId", });
+    internal_static_webfontsdk_GetProfileWithoutMapResult_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_webfontsdk_GetProfileWithoutMapResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_webfontsdk_GetProfileWithoutMapResult_descriptor,
+        new java.lang.String[] { "FontId", "Data", });
+    internal_static_webfontsdk_GetMultGlyfsUnicodeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_webfontsdk_GetMultGlyfsUnicodeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_webfontsdk_GetMultGlyfsUnicodeRequest_descriptor,
+        new java.lang.String[] { "Apikey", "FontId", "FontChecksum", "Unicodes", "AppendZero", });
+    internal_static_webfontsdk_indexs_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_webfontsdk_indexs_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_webfontsdk_indexs_descriptor,
+        new java.lang.String[] { "Items", });
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_webfontsdk_GetMultGlyfsUnicodeResult_descriptor,
+        new java.lang.String[] { "Unicodes", "Indexs", });
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_UnicodesEntry_descriptor =
+      internal_static_webfontsdk_GetMultGlyfsUnicodeResult_descriptor.getNestedTypes().get(0);
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_UnicodesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_webfontsdk_GetMultGlyfsUnicodeResult_UnicodesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_IndexsEntry_descriptor =
+      internal_static_webfontsdk_GetMultGlyfsUnicodeResult_descriptor.getNestedTypes().get(1);
+    internal_static_webfontsdk_GetMultGlyfsUnicodeResult_IndexsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_webfontsdk_GetMultGlyfsUnicodeResult_IndexsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

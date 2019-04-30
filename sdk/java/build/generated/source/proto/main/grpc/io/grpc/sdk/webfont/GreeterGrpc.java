@@ -126,6 +126,70 @@ public final class GreeterGrpc {
      return getFontListMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.grpc.sdk.webfont.GetProfileWithoutMapRequest,
+      io.grpc.sdk.webfont.GetProfileWithoutMapResult> getGetProfileWithoutMapMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProfileWithoutMap",
+      requestType = io.grpc.sdk.webfont.GetProfileWithoutMapRequest.class,
+      responseType = io.grpc.sdk.webfont.GetProfileWithoutMapResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.sdk.webfont.GetProfileWithoutMapRequest,
+      io.grpc.sdk.webfont.GetProfileWithoutMapResult> getGetProfileWithoutMapMethod() {
+    io.grpc.MethodDescriptor<io.grpc.sdk.webfont.GetProfileWithoutMapRequest, io.grpc.sdk.webfont.GetProfileWithoutMapResult> getGetProfileWithoutMapMethod;
+    if ((getGetProfileWithoutMapMethod = GreeterGrpc.getGetProfileWithoutMapMethod) == null) {
+      synchronized (GreeterGrpc.class) {
+        if ((getGetProfileWithoutMapMethod = GreeterGrpc.getGetProfileWithoutMapMethod) == null) {
+          GreeterGrpc.getGetProfileWithoutMapMethod = getGetProfileWithoutMapMethod = 
+              io.grpc.MethodDescriptor.<io.grpc.sdk.webfont.GetProfileWithoutMapRequest, io.grpc.sdk.webfont.GetProfileWithoutMapResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "webfontsdk.Greeter", "GetProfileWithoutMap"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.sdk.webfont.GetProfileWithoutMapRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.sdk.webfont.GetProfileWithoutMapResult.getDefaultInstance()))
+                  .setSchemaDescriptor(new GreeterMethodDescriptorSupplier("GetProfileWithoutMap"))
+                  .build();
+          }
+        }
+     }
+     return getGetProfileWithoutMapMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest,
+      io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult> getGetMultGlyfsUnicodeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMultGlyfsUnicode",
+      requestType = io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest.class,
+      responseType = io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest,
+      io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult> getGetMultGlyfsUnicodeMethod() {
+    io.grpc.MethodDescriptor<io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest, io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult> getGetMultGlyfsUnicodeMethod;
+    if ((getGetMultGlyfsUnicodeMethod = GreeterGrpc.getGetMultGlyfsUnicodeMethod) == null) {
+      synchronized (GreeterGrpc.class) {
+        if ((getGetMultGlyfsUnicodeMethod = GreeterGrpc.getGetMultGlyfsUnicodeMethod) == null) {
+          GreeterGrpc.getGetMultGlyfsUnicodeMethod = getGetMultGlyfsUnicodeMethod = 
+              io.grpc.MethodDescriptor.<io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest, io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "webfontsdk.Greeter", "GetMultGlyfsUnicode"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult.getDefaultInstance()))
+                  .setSchemaDescriptor(new GreeterMethodDescriptorSupplier("GetMultGlyfsUnicode"))
+                  .build();
+          }
+        }
+     }
+     return getGetMultGlyfsUnicodeMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -186,6 +250,26 @@ public final class GreeterGrpc {
       asyncUnimplementedUnaryCall(getFontListMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     *GetProfile
+     * </pre>
+     */
+    public void getProfileWithoutMap(io.grpc.sdk.webfont.GetProfileWithoutMapRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.sdk.webfont.GetProfileWithoutMapResult> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetProfileWithoutMapMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *GetMultGlyfsUnicode
+     * </pre>
+     */
+    public void getMultGlyfsUnicode(io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetMultGlyfsUnicodeMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -209,6 +293,20 @@ public final class GreeterGrpc {
                 io.grpc.sdk.webfont.FontListRequest,
                 io.grpc.sdk.webfont.FontListResult>(
                   this, METHODID_FONT_LIST)))
+          .addMethod(
+            getGetProfileWithoutMapMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.sdk.webfont.GetProfileWithoutMapRequest,
+                io.grpc.sdk.webfont.GetProfileWithoutMapResult>(
+                  this, METHODID_GET_PROFILE_WITHOUT_MAP)))
+          .addMethod(
+            getGetMultGlyfsUnicodeMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest,
+                io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult>(
+                  this, METHODID_GET_MULT_GLYFS_UNICODE)))
           .build();
     }
   }
@@ -266,6 +364,28 @@ public final class GreeterGrpc {
       asyncUnaryCall(
           getChannel().newCall(getFontListMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *GetProfile
+     * </pre>
+     */
+    public void getProfileWithoutMap(io.grpc.sdk.webfont.GetProfileWithoutMapRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.sdk.webfont.GetProfileWithoutMapResult> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetProfileWithoutMapMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *GetMultGlyfsUnicode
+     * </pre>
+     */
+    public void getMultGlyfsUnicode(io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetMultGlyfsUnicodeMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -317,6 +437,26 @@ public final class GreeterGrpc {
     public io.grpc.sdk.webfont.FontListResult fontList(io.grpc.sdk.webfont.FontListRequest request) {
       return blockingUnaryCall(
           getChannel(), getFontListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *GetProfile
+     * </pre>
+     */
+    public io.grpc.sdk.webfont.GetProfileWithoutMapResult getProfileWithoutMap(io.grpc.sdk.webfont.GetProfileWithoutMapRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetProfileWithoutMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *GetMultGlyfsUnicode
+     * </pre>
+     */
+    public io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult getMultGlyfsUnicode(io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetMultGlyfsUnicodeMethod(), getCallOptions(), request);
     }
   }
 
@@ -373,11 +513,35 @@ public final class GreeterGrpc {
       return futureUnaryCall(
           getChannel().newCall(getFontListMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *GetProfile
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.sdk.webfont.GetProfileWithoutMapResult> getProfileWithoutMap(
+        io.grpc.sdk.webfont.GetProfileWithoutMapRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetProfileWithoutMapMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     *GetMultGlyfsUnicode
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult> getMultGlyfsUnicode(
+        io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetMultGlyfsUnicodeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_BUILD_FONT = 0;
   private static final int METHODID_MULT_BUILD_FONT = 1;
   private static final int METHODID_FONT_LIST = 2;
+  private static final int METHODID_GET_PROFILE_WITHOUT_MAP = 3;
+  private static final int METHODID_GET_MULT_GLYFS_UNICODE = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -407,6 +571,14 @@ public final class GreeterGrpc {
         case METHODID_FONT_LIST:
           serviceImpl.fontList((io.grpc.sdk.webfont.FontListRequest) request,
               (io.grpc.stub.StreamObserver<io.grpc.sdk.webfont.FontListResult>) responseObserver);
+          break;
+        case METHODID_GET_PROFILE_WITHOUT_MAP:
+          serviceImpl.getProfileWithoutMap((io.grpc.sdk.webfont.GetProfileWithoutMapRequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.sdk.webfont.GetProfileWithoutMapResult>) responseObserver);
+          break;
+        case METHODID_GET_MULT_GLYFS_UNICODE:
+          serviceImpl.getMultGlyfsUnicode((io.grpc.sdk.webfont.GetMultGlyfsUnicodeRequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.sdk.webfont.GetMultGlyfsUnicodeResult>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -472,6 +644,8 @@ public final class GreeterGrpc {
               .addMethod(getBuildFontMethod())
               .addMethod(getMultBuildFontMethod())
               .addMethod(getFontListMethod())
+              .addMethod(getGetProfileWithoutMapMethod())
+              .addMethod(getGetMultGlyfsUnicodeMethod())
               .build();
         }
       }

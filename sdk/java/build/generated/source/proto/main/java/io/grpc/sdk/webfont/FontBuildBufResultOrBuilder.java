@@ -54,4 +54,9 @@ public interface FontBuildBufResultOrBuilder extends
    * <code>bytes bytes_woff = 7;</code>
    */
   com.google.protobuf.ByteString getBytesWoff();
+
+  /**
+   * <code>bytes bytes_woff2 = 8;</code>
+   */
+  com.google.protobuf.ByteString getBytesWoff2();
 }

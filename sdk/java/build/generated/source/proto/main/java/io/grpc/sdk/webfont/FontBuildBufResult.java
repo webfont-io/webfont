@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     bytesTtf_ = com.google.protobuf.ByteString.EMPTY;
     bytesEot_ = com.google.protobuf.ByteString.EMPTY;
     bytesWoff_ = com.google.protobuf.ByteString.EMPTY;
+    bytesWoff2_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -83,6 +84,11 @@ private static final long serialVersionUID = 0L;
           case 58: {
 
             bytesWoff_ = input.readBytes();
+            break;
+          }
+          case 66: {
+
+            bytesWoff2_ = input.readBytes();
             break;
           }
           default: {
@@ -213,6 +219,15 @@ private static final long serialVersionUID = 0L;
     return bytesWoff_;
   }
 
+  public static final int BYTES_WOFF2_FIELD_NUMBER = 8;
+  private com.google.protobuf.ByteString bytesWoff2_;
+  /**
+   * <code>bytes bytes_woff2 = 8;</code>
+   */
+  public com.google.protobuf.ByteString getBytesWoff2() {
+    return bytesWoff2_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -247,6 +262,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!bytesWoff_.isEmpty()) {
       output.writeBytes(7, bytesWoff_);
+    }
+    if (!bytesWoff2_.isEmpty()) {
+      output.writeBytes(8, bytesWoff2_);
     }
     unknownFields.writeTo(output);
   }
@@ -284,6 +302,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(7, bytesWoff_);
     }
+    if (!bytesWoff2_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(8, bytesWoff2_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -314,6 +336,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBytesEot());
     result = result && getBytesWoff()
         .equals(other.getBytesWoff());
+    result = result && getBytesWoff2()
+        .equals(other.getBytesWoff2());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -339,6 +363,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getBytesEot().hashCode();
     hash = (37 * hash) + BYTES_WOFF_FIELD_NUMBER;
     hash = (53 * hash) + getBytesWoff().hashCode();
+    hash = (37 * hash) + BYTES_WOFF2_FIELD_NUMBER;
+    hash = (53 * hash) + getBytesWoff2().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -486,6 +512,8 @@ private static final long serialVersionUID = 0L;
 
       bytesWoff_ = com.google.protobuf.ByteString.EMPTY;
 
+      bytesWoff2_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -519,6 +547,7 @@ private static final long serialVersionUID = 0L;
       result.bytesTtf_ = bytesTtf_;
       result.bytesEot_ = bytesEot_;
       result.bytesWoff_ = bytesWoff_;
+      result.bytesWoff2_ = bytesWoff2_;
       onBuilt();
       return result;
     }
@@ -588,6 +617,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBytesWoff() != com.google.protobuf.ByteString.EMPTY) {
         setBytesWoff(other.getBytesWoff());
+      }
+      if (other.getBytesWoff2() != com.google.protobuf.ByteString.EMPTY) {
+        setBytesWoff2(other.getBytesWoff2());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -872,6 +904,35 @@ private static final long serialVersionUID = 0L;
     public Builder clearBytesWoff() {
       
       bytesWoff_ = getDefaultInstance().getBytesWoff();
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString bytesWoff2_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <code>bytes bytes_woff2 = 8;</code>
+     */
+    public com.google.protobuf.ByteString getBytesWoff2() {
+      return bytesWoff2_;
+    }
+    /**
+     * <code>bytes bytes_woff2 = 8;</code>
+     */
+    public Builder setBytesWoff2(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bytesWoff2_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bytes bytes_woff2 = 8;</code>
+     */
+    public Builder clearBytesWoff2() {
+      
+      bytesWoff2_ = getDefaultInstance().getBytesWoff2();
       onChanged();
       return this;
     }

@@ -17,9 +17,24 @@ service Greeter {
 
     //Get my fontlist
     rpc FontList(FontListRequest) returns (FontListResult){}
-    
-  }
-  
+
+    //GetProfile
+    rpc GetProfileWithoutMap(GetProfileWithoutMapRequest) returns (GetProfileWithoutMapResult) {}
+
+
+    //GetUnicodeIndexs
+    //rpc GetUnicodeIndexs(GetUnicodeIndexsRequest) returns (GetUnicodeIndexsResult) {}
+
+    //GetGlyfs Index
+    //rpc GetGlyfsIndex(GetGlyfsIndexRequest) returns (GetGlyfsIndexResult) {}
+
+
+    //GetGlyfs Unicode
+    //rpc GetGlyfsUnicode(GetGlyfsUnicodeRequest) returns (GetGlyfsUnicodeResult) {}
+
+    //GetMultGlyfsUnicode
+    rpc GetMultGlyfsUnicode(GetMultGlyfsUnicodeRequest) returns (GetMultGlyfsUnicodeResult) {}
+}
 
 message FontListRequest {
     string apikey=1;
@@ -27,19 +42,18 @@ message FontListRequest {
 
 
 message FontListResult {
-    //uint32 font_id = 1;
-    //uint64 express = 2;
     map<uint32, int64> fonts = 1;
 }
 
 
 message FontBuildRequest {
-    uint32 font_id=1;
-    string text=2;
-    string apikey=3;
+    string apikey=1;
+    uint32 font_id=2;
+    string text=3;
     bool need_ttf=4;
     bool need_eot=5;
     bool need_woff=6;
+    bool need_woff2=7;
 }
 
 
@@ -56,8 +70,77 @@ message FontBuildBufResult {
     bytes bytes_ttf=5;
     bytes bytes_eot=6;
     bytes bytes_woff=7;
+    bytes bytes_woff2=8;
 }
 
 message MultFontBuildBufResult {
     repeated FontBuildBufResult items = 1;
+}
+
+
+//GetProfile for html5
+message GetProfileWithoutMapRequest {
+    string apikey=1;
+    uint32 font_id=2;
+}
+
+message GetProfileWithoutMapResult {
+    uint32 font_id=1;
+    bytes data=2;
+}
+
+/*
+message GetUnicodeIndexsRequest {
+    string apikey=1;
+    uint32 font_id=2;
+    uint32 unicode=3;
+}
+
+message GetUnicodeIndexsResult {
+    repeated uint32 indexs=1;
+}
+
+
+message GetGlyfsIndexRequest {
+    string apikey=1;
+    uint32 font_id=2;
+    uint32 index=3;
+}
+
+
+
+message GetGlyfsUnicodeRequest {
+    string apikey=1;
+    uint32 font_id=2;
+    uint32 unicode=3;
+}
+
+
+
+message GetGlyfsIndexResult {
+    uint32 index=1;
+    bytes data=2;
+}
+
+message GetGlyfsUnicodeResult {
+    uint32 unicode=1;
+    repeated GetGlyfsIndexResult datas = 2;
+}
+*/
+
+message GetMultGlyfsUnicodeRequest {
+    string apikey=1;
+    uint32 font_id=2;
+    uint32 font_checksum=3;
+    repeated uint32 unicodes=4;
+    bool append_zero=5;    //追加0
+}
+
+message indexs {
+    repeated uint32 items=2;
+}
+
+message GetMultGlyfsUnicodeResult {
+    map<uint32,indexs> unicodes=1;
+    map<uint32,bytes> indexs=3;
 }
